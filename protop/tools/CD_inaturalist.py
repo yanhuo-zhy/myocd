@@ -59,7 +59,7 @@ class INaturalist_SUB(INaturalist):
         if self.target_transform is not None:
             target = self.target_transform(target)
 
-        return img, target, self.uq_idxs[index]
+        return img, target, self.uq_idxs[index], self.uq_idxs[index]
 
     def __len__(self) -> int:
         return len(self.index)
