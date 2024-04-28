@@ -6,7 +6,7 @@
 #SBATCH -c 5
 #SBATCH --mem=20000
 #SBATCH --gres gpu:1
-#SBATCH -o /home/pszzz/hyzheng/myocd/temp/my_protop_Mollusca_test0.txt
+#SBATCH -o /home/pszzz/hyzheng/myocd/temp/my_protop_Mollusca_test1.txt
 
 module load gcc/gcc-10.2.0
 module load nvidia/cuda-11.1 nvidia/cudnn-v8.1.1.33-forcuda11.0-to-11.2
@@ -19,7 +19,7 @@ model=deit_base_patch16_224
 batch_size=128
 num_gpus=1
 use_port=2672
-seed=1027
+seed=1028
 
 # Learning Rate
 warmup_lr=1e-4
