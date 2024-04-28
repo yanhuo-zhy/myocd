@@ -1140,7 +1140,7 @@ def evaluate(data_loader, test_loader_unlabelled, model, device, args, centers):
         ## openset
         all_feats.append(feats.cpu().numpy())
         targets = np.append(targets, label.cpu().numpy())
-        mask = np.append(mask, np.array([True if x.item() in range(28) else False for x in label]))
+        mask = np.append(mask, np.array([True if x.item() in range(39) else False for x in label]))
 
     # if total_pred_old > 0:
     #     correct_ratio = correct_pred_old / total_pred_old
