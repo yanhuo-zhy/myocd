@@ -78,15 +78,13 @@ def subsample_dataset(dataset, idxs):
 
     # Allow for setting in which all empty set of indices is passed
 
-    if len(idxs) > 0:
-        dataset.index = dataset.index[idxs]
-        dataset.uq_idxs = dataset.uq_idxs[idxs]
+    mask = np.zeros(len(dataset)).astype('bool')
+    mask[idxs] = True
 
-        return dataset
+    dataset.index = dataset.index[mask]
+    dataset.uq_idxs = dataset.uq_idxs[mask]
 
-    else:
-
-        return None
+    return dataset
 
 
 def subsample_classes(dataset, include_classes=(0, 1, 8, 9)):
