@@ -50,6 +50,9 @@ class INaturalist_SUB(INaturalist):
         cat_id, fname = self.index[index]
         img = Image.open(os.path.join(self.root, self.all_categories[self.reverse_index_map[cat_id]], fname))
 
+        if img.mode != 'RGB':
+            img = img.convert('RGB')  # 如果不是 RGB 模式，则转换为 RGB 模式
+            
         # 使用 cat_id 作为目标
         target = cat_id
 
