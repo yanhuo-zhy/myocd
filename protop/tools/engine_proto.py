@@ -832,7 +832,7 @@ def train_one_epoch(model: torch.nn.Module, criterion: _Loss,
             # print(f"Nums of hash centers: {len(unique_rows)}")
 
             # print(hash_centers.shape)
-            loss_diff = diff_loss(hash_centers_sign, samples_per_class=1, L=12, dis=4)
+            loss_diff = diff_loss(hash_centers_sign, samples_per_class=1, L=12, dis=3)
             # loss_same = same_loss(hash_centers, num_classes=100, samples_per_class=10)
             loss_quan = (1 - torch.abs(hash_centers_sign)).mean() 
             ## hash center loss
