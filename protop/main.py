@@ -174,7 +174,7 @@ def get_args_parser():
 
     # Dataset parameters
     parser.add_argument('--data_set', default='CIFAR100', 
-    choices=['CUB2011U', 'Car', 'Dogs', 'CD_CUB2011U', 'CD_CIFAR100', 'CD_Car', 'CD_herb', 'CD_food', 'CD_aircraft', 'CD_flower', 'CD_pets', 'Animalia'],
+    choices=['CUB2011U', 'Car', 'Dogs', 'CD_CUB2011U', 'CD_CIFAR100', 'CD_Car', 'CD_herb', 'CD_food', 'CD_aircraft', 'CD_flower', 'CD_pets', 'Actinopterygii', 'Amphibia', 'Animalia', 'Arachnida', 'Aves', 'Chromista', 'Fungi', 'Insecta', 'Mammalia', 'Mollusca', 'Plantae', 'Protozoa', 'Reptilia'],
     # choices=['CIFAR', 'IMNET', 'INAT', 'INAT19'],
                         type=str, help='Image Net dataset path')
     parser.add_argument('--inat-category', default='name',
