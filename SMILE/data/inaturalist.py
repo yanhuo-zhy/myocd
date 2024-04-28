@@ -177,8 +177,147 @@ def get_inaturalist_datasets(train_transform,
 
 if __name__ == '__main__':
 
+    print("------------------Amphibia-----------------")
+    x = get_inaturalist_datasets(None, None, subclassname='Amphibia', split_train_val=False,
+                         train_classes=range(58), prop_train_labels=0.5)
+
+    print('Printing lens...')
+    for k, v in x.items():
+        if v is not None:
+            print(f'{k}: {len(v)}')
+
+    print('Printing labelled and unlabelled overlap...')
+    print(set.intersection(set(x['train_labelled'].uq_idxs), set(x['train_unlabelled'].uq_idxs)))
+    print('Printing total instances in train...')
+    print(len(set(x['train_labelled'].uq_idxs)) + len(set(x['train_unlabelled'].uq_idxs)))
+
+    targets = np.array([x for (x, _) in x["train_labelled"].index])
+    train_classes = np.unique(targets)
+    print(f'Num Labelled Classes: {len(train_classes)}')
+    targets = np.array([x for (x, _) in x["train_unlabelled"].index])
+    train_classes = np.unique(targets)
+    print(f'Num Unabelled Classes: {len(train_classes)}')
+    print(f'Len labelled set: {len(x["train_labelled"])}')
+    print(f'Len unlabelled set: {len(x["train_unlabelled"])}')
+
+    print("------------------Animalia-----------------")
     x = get_inaturalist_datasets(None, None, subclassname='Animalia', split_train_val=False,
                          train_classes=range(39), prop_train_labels=0.5)
+
+    print('Printing lens...')
+    for k, v in x.items():
+        if v is not None:
+            print(f'{k}: {len(v)}')
+
+    print('Printing labelled and unlabelled overlap...')
+    print(set.intersection(set(x['train_labelled'].uq_idxs), set(x['train_unlabelled'].uq_idxs)))
+    print('Printing total instances in train...')
+    print(len(set(x['train_labelled'].uq_idxs)) + len(set(x['train_unlabelled'].uq_idxs)))
+
+    targets = np.array([x for (x, _) in x["train_labelled"].index])
+    train_classes = np.unique(targets)
+    print(f'Num Labelled Classes: {len(train_classes)}')
+    targets = np.array([x for (x, _) in x["train_unlabelled"].index])
+    train_classes = np.unique(targets)
+    print(f'Num Unabelled Classes: {len(train_classes)}')
+    print(f'Len labelled set: {len(x["train_labelled"])}')
+    print(f'Len unlabelled set: {len(x["train_unlabelled"])}')
+
+    print("------------------Arachnida-----------------")
+    x = get_inaturalist_datasets(None, None, subclassname='Arachnida', split_train_val=False,
+                         train_classes=range(28), prop_train_labels=0.5)
+
+    print('Printing lens...')
+    for k, v in x.items():
+        if v is not None:
+            print(f'{k}: {len(v)}')
+
+    print('Printing labelled and unlabelled overlap...')
+    print(set.intersection(set(x['train_labelled'].uq_idxs), set(x['train_unlabelled'].uq_idxs)))
+    print('Printing total instances in train...')
+    print(len(set(x['train_labelled'].uq_idxs)) + len(set(x['train_unlabelled'].uq_idxs)))
+
+    targets = np.array([x for (x, _) in x["train_labelled"].index])
+    train_classes = np.unique(targets)
+    print(f'Num Labelled Classes: {len(train_classes)}')
+    targets = np.array([x for (x, _) in x["train_unlabelled"].index])
+    train_classes = np.unique(targets)
+    print(f'Num Unabelled Classes: {len(train_classes)}')
+    print(f'Len labelled set: {len(x["train_labelled"])}')
+    print(f'Len unlabelled set: {len(x["train_unlabelled"])}')
+
+    print("------------------Fungi-----------------")
+    x = get_inaturalist_datasets(None, None, subclassname='Fungi', split_train_val=False,
+                         train_classes=range(61), prop_train_labels=0.5)
+
+    print('Printing lens...')
+    for k, v in x.items():
+        if v is not None:
+            print(f'{k}: {len(v)}')
+
+    print('Printing labelled and unlabelled overlap...')
+    print(set.intersection(set(x['train_labelled'].uq_idxs), set(x['train_unlabelled'].uq_idxs)))
+    print('Printing total instances in train...')
+    print(len(set(x['train_labelled'].uq_idxs)) + len(set(x['train_unlabelled'].uq_idxs)))
+
+    targets = np.array([x for (x, _) in x["train_labelled"].index])
+    train_classes = np.unique(targets)
+    print(f'Num Labelled Classes: {len(train_classes)}')
+    targets = np.array([x for (x, _) in x["train_unlabelled"].index])
+    train_classes = np.unique(targets)
+    print(f'Num Unabelled Classes: {len(train_classes)}')
+    print(f'Len labelled set: {len(x["train_labelled"])}')
+    print(f'Len unlabelled set: {len(x["train_unlabelled"])}')
+
+    print("------------------Mammalia-----------------")
+    x = get_inaturalist_datasets(None, None, subclassname='Mammalia', split_train_val=False,
+                         train_classes=range(93), prop_train_labels=0.5)
+
+    print('Printing lens...')
+    for k, v in x.items():
+        if v is not None:
+            print(f'{k}: {len(v)}')
+
+    print('Printing labelled and unlabelled overlap...')
+    print(set.intersection(set(x['train_labelled'].uq_idxs), set(x['train_unlabelled'].uq_idxs)))
+    print('Printing total instances in train...')
+    print(len(set(x['train_labelled'].uq_idxs)) + len(set(x['train_unlabelled'].uq_idxs)))
+
+    targets = np.array([x for (x, _) in x["train_labelled"].index])
+    train_classes = np.unique(targets)
+    print(f'Num Labelled Classes: {len(train_classes)}')
+    targets = np.array([x for (x, _) in x["train_unlabelled"].index])
+    train_classes = np.unique(targets)
+    print(f'Num Unabelled Classes: {len(train_classes)}')
+    print(f'Len labelled set: {len(x["train_labelled"])}')
+    print(f'Len unlabelled set: {len(x["train_unlabelled"])}')
+
+    print("------------------Mollusca-----------------")
+    x = get_inaturalist_datasets(None, None, subclassname='Mollusca', split_train_val=False,
+                         train_classes=range(47), prop_train_labels=0.5)
+
+    print('Printing lens...')
+    for k, v in x.items():
+        if v is not None:
+            print(f'{k}: {len(v)}')
+
+    print('Printing labelled and unlabelled overlap...')
+    print(set.intersection(set(x['train_labelled'].uq_idxs), set(x['train_unlabelled'].uq_idxs)))
+    print('Printing total instances in train...')
+    print(len(set(x['train_labelled'].uq_idxs)) + len(set(x['train_unlabelled'].uq_idxs)))
+
+    targets = np.array([x for (x, _) in x["train_labelled"].index])
+    train_classes = np.unique(targets)
+    print(f'Num Labelled Classes: {len(train_classes)}')
+    targets = np.array([x for (x, _) in x["train_unlabelled"].index])
+    train_classes = np.unique(targets)
+    print(f'Num Unabelled Classes: {len(train_classes)}')
+    print(f'Len labelled set: {len(x["train_labelled"])}')
+    print(f'Len unlabelled set: {len(x["train_unlabelled"])}')
+
+    print("------------------Reptilia-----------------")
+    x = get_inaturalist_datasets(None, None, subclassname='Reptilia', split_train_val=False,
+                         train_classes=range(145), prop_train_labels=0.5)
 
     print('Printing lens...')
     for k, v in x.items():
