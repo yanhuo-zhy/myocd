@@ -347,7 +347,8 @@ if __name__ == "__main__":
 
             model = vits.__dict__['vit_base']()
 
-            state_dict = torch.load(pretrain_path, map_location='cpu')
+            # state_dict = torch.load(pretrain_path, map_location='cpu')
+            state_dict = torch.hub.load('facebookresearch/dino:main', 'dino_vitb16')
             model.load_state_dict(state_dict)
 
             if args.warmup_model_dir is not None:
