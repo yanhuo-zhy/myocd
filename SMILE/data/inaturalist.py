@@ -50,6 +50,12 @@ class INaturalist_SUB(INaturalist):
         cat_id, fname = self.index[index]
         img = Image.open(os.path.join(self.root, self.all_categories[self.reverse_index_map[cat_id]], fname))
 
+        # 如果图像是黑白的，复制三次以扩展通道
+        if img.mode == 'L':  # 'L' 表示黑白图像
+            img = np.array(img)  # 转换为 NumPy 数组
+            img = np.stack([img, img, img], axis=-1)  # 复制三次，使得通道数为 3
+            img = Image.fromarray(img)  # 转换回 PIL 图像
+
         # 使用 cat_id 作为目标
         target = cat_id
 
