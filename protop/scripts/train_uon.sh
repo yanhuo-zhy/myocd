@@ -48,6 +48,22 @@ ppc_cov_coe=0.1
 ppc_mean_coe=0.5
 dim=768
 
+if [ "$model" = "deit_tiny_patch16_224" ]
+then
+    reserve_layer_idx=11
+elif [ "$model" = "deit_small_patch16_224" ]
+then
+    reserve_layer_idx=11
+elif [ "$model" = "deit_base_patch16_224" ]
+then
+    reserve_layer_idx=11
+elif [ "$model" = "cait_xxs24_224" ]
+then
+    reserve_layer_idx=1
+fi
+
+ft=protopformer
+
 for seed in 1027 1028 1029;
 do
     for data_set in Animalia;
