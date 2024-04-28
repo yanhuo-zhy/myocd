@@ -6,7 +6,7 @@
 #SBATCH -c 5
 #SBATCH --mem=20000
 #SBATCH --gres gpu:1
-#SBATCH -o /home/pszzz/hyzheng/myocd/temp/smile_Animalia_test.txt
+#SBATCH -o /home/pszzz/hyzheng/myocd/temp/smile_Arachnida_test.txt
 
 module load gcc/gcc-10.2.0
 # module load nvidia/cuda-10.0 nvidia/cudnn-v7.6.5.32-forcuda10.0
@@ -16,7 +16,7 @@ source /home/pszzz/miniconda3/bin/activate zhy
 CUDA_VISIBLE_DEVICES=0
 
 # Get unique log file,
-SAVE_DIR=./outputs/Animalia/
+SAVE_DIR=./outputs/Arachnida/
 
 mkdir -p ${SAVE_DIR}
 
@@ -25,7 +25,7 @@ EXP_NUM=$((${EXP_NUM}+1))
 echo $EXP_NUM
 
 python -m train_smile \
-            --dataset_name 'Animalia' \
+            --dataset_name 'Arachnida' \
             --batch_size 128 \
             --grad_from_block 11 \
             --epochs 100 \
