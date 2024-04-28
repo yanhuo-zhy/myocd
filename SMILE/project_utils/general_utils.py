@@ -4,7 +4,7 @@ import random
 import numpy as np
 import inspect
 
-from torch.utils.tensorboard import SummaryWriter
+from tensorboardX import SummaryWriter
 from tensorboard.backend.event_processing.event_accumulator import EventAccumulator
 
 from datetime import datetime
