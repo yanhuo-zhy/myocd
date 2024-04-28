@@ -1,0 +1,198 @@
+Experiment saved to: /wang_hp/zhy/OCD/source_code/checkpoints/log/(12.04.2024_|_01.076)
+['checkpoints']
+Namespace(base_model='vit_dino', batch_size=128, contrast_unlabel_only=False, cuda=True, dataset_name='cub', epochs=100, eval_funcs=['v1', 'v2'], exp_root='/wang_hp/zhy/OCD/source_code', gamma=0.1, grad_from_block=11, image_size=224, log_dir='/wang_hp/zhy/OCD/source_code/checkpoints/log/(12.04.2024_|_01.076)', lr=0.01, model_dir='/wang_hp/zhy/OCD/source_code/checkpoints/log/(12.04.2024_|_01.076)/checkpoints', model_name='vit_dino', model_path='/wang_hp/zhy/OCD/source_code/checkpoints/log/(12.04.2024_|_01.076)/checkpoints/model.pt', momentum=0.9, n_views=2, num_labeled_classes=100, num_unlabeled_classes=100, num_workers=16, prop_train_labels=0.5, save_best_thresh=None, seed=1, sup_con_weight=0.5, temperature=1.0, train_classes=[150, 70, 34, 178, 199, 131, 129, 147, 134, 11, 26, 93, 95, 121, 123, 99, 149, 167, 18, 31, 69, 198, 116, 158, 126, 17, 5, 179, 111, 163, 184, 81, 174, 42, 53, 89, 77, 55, 23, 48, 43, 44, 56, 28, 193, 143, 0, 176, 84, 15, 38, 154, 141, 190, 172, 124, 189, 19, 80, 157, 12, 9, 79, 30, 94, 67, 197, 97, 168, 137, 119, 76, 98, 88, 40, 106, 171, 87, 166, 186, 27, 51, 144, 135, 161, 64, 177, 7, 146, 61, 50, 162, 133, 82, 39, 74, 72, 91, 196, 136], transform='imagenet', unlabeled_classes=[29, 110, 3, 8, 13, 58, 142, 25, 145, 63, 59, 65, 24, 140, 120, 32, 114, 107, 160, 130, 118, 101, 115, 128, 117, 71, 156, 112, 36, 122, 104, 102, 90, 125, 152, 195, 132, 83, 22, 192, 153, 175, 191, 155, 49, 194, 73, 66, 170, 151, 169, 96, 103, 37, 181, 127, 78, 21, 10, 164, 62, 2, 183, 85, 45, 60, 92, 185, 20, 159, 173, 148, 1, 57, 113, 165, 52, 109, 14, 4, 180, 6, 182, 68, 33, 108, 46, 35, 75, 188, 187, 100, 47, 105, 41, 86, 16, 54, 139, 138], use_ssb_splits=True, warmup_model_dir=None, weight_decay=5e-05, writer=<torch.utils.tensorboard.writer.SummaryWriter object at 0x7fa0a1451610>)
+Using evaluation function v1 to print results
+Train Epoch: 0 Avg Loss: 4.9630 | Seen Class Acc: 0.0000 
+Collating features...
+415 4496
+Epoch 0, Train ACC Unlabelled_v1: All 0.2191 | Old 0.2462 | New 0.2055
+Epoch 0, Train ACC Unlabelled_v2: All 0.1775 | Old 0.1454 | New 0.1935
+Train Accuracies: All 0.2191 | Old 0.2462 | New 0.2055
+Train Epoch: 1 Avg Loss: 3.6646 | Seen Class Acc: 0.0000 
+Collating features...
+586 4496
+Epoch 1, Train ACC Unlabelled_v1: All 0.2351 | Old 0.2869 | New 0.2092
+Epoch 1, Train ACC Unlabelled_v2: All 0.1915 | Old 0.1908 | New 0.1919
+Train Accuracies: All 0.2351 | Old 0.2869 | New 0.2092
+Train Epoch: 2 Avg Loss: 3.1651 | Seen Class Acc: 0.0000 
+Collating features...
+708 4496
+Epoch 2, Train ACC Unlabelled_v1: All 0.2498 | Old 0.3155 | New 0.2169
+Epoch 2, Train ACC Unlabelled_v2: All 0.2182 | Old 0.2388 | New 0.2079
+Train Accuracies: All 0.2498 | Old 0.3155 | New 0.2169
+Train Epoch: 3 Avg Loss: 2.8915 | Seen Class Acc: 0.0000 
+Collating features...
+646 4496
+Epoch 3, Train ACC Unlabelled_v1: All 0.2676 | Old 0.3436 | New 0.2296
+Epoch 3, Train ACC Unlabelled_v2: All 0.2293 | Old 0.2615 | New 0.2132
+Train Accuracies: All 0.2676 | Old 0.3436 | New 0.2296
+Train Epoch: 4 Avg Loss: 2.7174 | Seen Class Acc: 0.0000 
+Collating features...
+690 4496
+Epoch 4, Train ACC Unlabelled_v1: All 0.2776 | Old 0.3602 | New 0.2362
+Epoch 4, Train ACC Unlabelled_v2: All 0.2375 | Old 0.2648 | New 0.2239
+Train Accuracies: All 0.2776 | Old 0.3602 | New 0.2362
+Train Epoch: 5 Avg Loss: 2.4794 | Seen Class Acc: 0.0000 
+Collating features...
+666 4496
+Epoch 5, Train ACC Unlabelled_v1: All 0.2742 | Old 0.3656 | New 0.2286
+Epoch 5, Train ACC Unlabelled_v2: All 0.2371 | Old 0.2869 | New 0.2122
+Train Accuracies: All 0.2742 | Old 0.3656 | New 0.2286
+Train Epoch: 6 Avg Loss: 2.2959 | Seen Class Acc: 0.0000 
+Collating features...
+679 4496
+Epoch 6, Train ACC Unlabelled_v1: All 0.2952 | Old 0.4116 | New 0.2369
+Epoch 6, Train ACC Unlabelled_v2: All 0.2547 | Old 0.3269 | New 0.2186
+Train Accuracies: All 0.2952 | Old 0.4116 | New 0.2369
+Train Epoch: 7 Avg Loss: 2.1902 | Seen Class Acc: 0.0000 
+Collating features...
+699 4496
+Epoch 7, Train ACC Unlabelled_v1: All 0.3000 | Old 0.4303 | New 0.2349
+Epoch 7, Train ACC Unlabelled_v2: All 0.2593 | Old 0.3622 | New 0.2079
+Train Accuracies: All 0.3000 | Old 0.4303 | New 0.2349
+Train Epoch: 8 Avg Loss: 2.0595 | Seen Class Acc: 0.0000 
+Collating features...
+657 4496
+Epoch 8, Train ACC Unlabelled_v1: All 0.3147 | Old 0.4490 | New 0.2476
+Epoch 8, Train ACC Unlabelled_v2: All 0.2671 | Old 0.3609 | New 0.2202
+Train Accuracies: All 0.3147 | Old 0.4490 | New 0.2476
+Train Epoch: 9 Avg Loss: 1.9220 | Seen Class Acc: 0.0000 
+Collating features...
+660 4496
+Epoch 9, Train ACC Unlabelled_v1: All 0.3178 | Old 0.4683 | New 0.2426
+Epoch 9, Train ACC Unlabelled_v2: All 0.2751 | Old 0.3662 | New 0.2296
+Train Accuracies: All 0.3178 | Old 0.4683 | New 0.2426
+Train Epoch: 10 Avg Loss: 1.8595 | Seen Class Acc: 0.0000 
+Collating features...
+652 4496
+Epoch 10, Train ACC Unlabelled_v1: All 0.3254 | Old 0.4663 | New 0.2549
+Epoch 10, Train ACC Unlabelled_v2: All 0.2778 | Old 0.3696 | New 0.2319
+Train Accuracies: All 0.3254 | Old 0.4663 | New 0.2549
+Train Epoch: 11 Avg Loss: 1.7979 | Seen Class Acc: 0.0000 
+Collating features...
+692 4496
+Epoch 11, Train ACC Unlabelled_v1: All 0.3352 | Old 0.4883 | New 0.2586
+Epoch 11, Train ACC Unlabelled_v2: All 0.2762 | Old 0.3629 | New 0.2329
+Train Accuracies: All 0.3352 | Old 0.4883 | New 0.2586
+Train Epoch: 12 Avg Loss: 1.7084 | Seen Class Acc: 0.0000 
+Collating features...
+719 4496
+Epoch 12, Train ACC Unlabelled_v1: All 0.3359 | Old 0.5190 | New 0.2442
+Epoch 12, Train ACC Unlabelled_v2: All 0.2814 | Old 0.4129 | New 0.2155
+Train Accuracies: All 0.3359 | Old 0.5190 | New 0.2442
+Train Epoch: 13 Avg Loss: 1.6248 | Seen Class Acc: 0.0000 
+Collating features...
+682 4496
+Epoch 13, Train ACC Unlabelled_v1: All 0.3401 | Old 0.5304 | New 0.2449
+Epoch 13, Train ACC Unlabelled_v2: All 0.2847 | Old 0.4229 | New 0.2155
+Train Accuracies: All 0.3401 | Old 0.5304 | New 0.2449
+Train Epoch: 14 Avg Loss: 1.5813 | Seen Class Acc: 0.0000 
+Collating features...
+661 4496
+Epoch 14, Train ACC Unlabelled_v1: All 0.3570 | Old 0.5524 | New 0.2593
+Epoch 14, Train ACC Unlabelled_v2: All 0.2972 | Old 0.4396 | New 0.2259
+Train Accuracies: All 0.3570 | Old 0.5524 | New 0.2593
+Train Epoch: 15 Avg Loss: 1.5103 | Seen Class Acc: 0.0000 
+Collating features...
+691 4496
+Epoch 15, Train ACC Unlabelled_v1: All 0.3503 | Old 0.5524 | New 0.2492
+Epoch 15, Train ACC Unlabelled_v2: All 0.2923 | Old 0.4330 | New 0.2219
+Train Accuracies: All 0.3503 | Old 0.5524 | New 0.2492
+Train Epoch: 16 Avg Loss: 1.4792 | Seen Class Acc: 0.0000 
+Collating features...
+686 4496
+Epoch 16, Train ACC Unlabelled_v1: All 0.3597 | Old 0.5791 | New 0.2499
+Epoch 16, Train ACC Unlabelled_v2: All 0.2980 | Old 0.4636 | New 0.2152
+Train Accuracies: All 0.3597 | Old 0.5791 | New 0.2499
+Train Epoch: 17 Avg Loss: 1.4461 | Seen Class Acc: 0.0000 
+Collating features...
+677 4496
+Epoch 17, Train ACC Unlabelled_v1: All 0.3508 | Old 0.5710 | New 0.2406
+Epoch 17, Train ACC Unlabelled_v2: All 0.2938 | Old 0.4690 | New 0.2062
+Train Accuracies: All 0.3508 | Old 0.5710 | New 0.2406
+Train Epoch: 18 Avg Loss: 1.4109 | Seen Class Acc: 0.0000 
+Collating features...
+664 4496
+Epoch 18, Train ACC Unlabelled_v1: All 0.3583 | Old 0.5771 | New 0.2489
+Epoch 18, Train ACC Unlabelled_v2: All 0.3000 | Old 0.4683 | New 0.2159
+Train Accuracies: All 0.3583 | Old 0.5771 | New 0.2489
+Train Epoch: 19 Avg Loss: 1.3725 | Seen Class Acc: 0.0000 
+Collating features...
+670 4496
+Epoch 19, Train ACC Unlabelled_v1: All 0.3665 | Old 0.5984 | New 0.2506
+Epoch 19, Train ACC Unlabelled_v2: All 0.3029 | Old 0.4883 | New 0.2102
+Train Accuracies: All 0.3665 | Old 0.5984 | New 0.2506
+Train Epoch: 20 Avg Loss: 1.3477 | Seen Class Acc: 0.0000 
+Collating features...
+616 4496
+Epoch 20, Train ACC Unlabelled_v1: All 0.3670 | Old 0.5937 | New 0.2536
+Epoch 20, Train ACC Unlabelled_v2: All 0.3043 | Old 0.4736 | New 0.2196
+Train Accuracies: All 0.3670 | Old 0.5937 | New 0.2536
+Train Epoch: 21 Avg Loss: 1.3334 | Seen Class Acc: 0.0000 
+Collating features...
+663 4496
+Epoch 21, Train ACC Unlabelled_v1: All 0.3757 | Old 0.6077 | New 0.2596
+Epoch 21, Train ACC Unlabelled_v2: All 0.3065 | Old 0.4937 | New 0.2129
+Train Accuracies: All 0.3757 | Old 0.6077 | New 0.2596
+Train Epoch: 22 Avg Loss: 1.3069 | Seen Class Acc: 0.0000 
+Collating features...
+629 4496
+Epoch 22, Train ACC Unlabelled_v1: All 0.3794 | Old 0.6164 | New 0.2609
+Epoch 22, Train ACC Unlabelled_v2: All 0.3094 | Old 0.4777 | New 0.2252
+Train Accuracies: All 0.3794 | Old 0.6164 | New 0.2609
+Train Epoch: 23 Avg Loss: 1.3415 | Seen Class Acc: 0.0000 
+Collating features...
+644 4496
+Epoch 23, Train ACC Unlabelled_v1: All 0.3812 | Old 0.6251 | New 0.2593
+Epoch 23, Train ACC Unlabelled_v2: All 0.3121 | Old 0.4983 | New 0.2189
+Train Accuracies: All 0.3812 | Old 0.6251 | New 0.2593
+Train Epoch: 24 Avg Loss: 1.2615 | Seen Class Acc: 0.0000 
+Collating features...
+636 4496
+Epoch 24, Train ACC Unlabelled_v1: All 0.3726 | Old 0.6131 | New 0.2523
+Epoch 24, Train ACC Unlabelled_v2: All 0.3054 | Old 0.5017 | New 0.2072
+Train Accuracies: All 0.3726 | Old 0.6131 | New 0.2523
+Train Epoch: 25 Avg Loss: 1.2371 | Seen Class Acc: 0.0000 
+Collating features...
+633 4496
+Epoch 25, Train ACC Unlabelled_v1: All 0.3850 | Old 0.6311 | New 0.2619
+Epoch 25, Train ACC Unlabelled_v2: All 0.3109 | Old 0.5290 | New 0.2019
+Train Accuracies: All 0.3850 | Old 0.6311 | New 0.2619
+Train Epoch: 26 Avg Loss: 1.2526 | Seen Class Acc: 0.0000 
+Collating features...
+658 4496
+Epoch 26, Train ACC Unlabelled_v1: All 0.3790 | Old 0.6284 | New 0.2543
+Epoch 26, Train ACC Unlabelled_v2: All 0.3109 | Old 0.5223 | New 0.2052
+Train Accuracies: All 0.3790 | Old 0.6284 | New 0.2543
+Train Epoch: 27 Avg Loss: 1.2514 | Seen Class Acc: 0.0000 
+Collating features...
+640 4496
+Epoch 27, Train ACC Unlabelled_v1: All 0.3790 | Old 0.6211 | New 0.2579
+Epoch 27, Train ACC Unlabelled_v2: All 0.3087 | Old 0.5163 | New 0.2049
+Train Accuracies: All 0.3790 | Old 0.6211 | New 0.2579
+Train Epoch: 28 Avg Loss: 1.1745 | Seen Class Acc: 0.0000 
+Collating features...
+633 4496
+Epoch 28, Train ACC Unlabelled_v1: All 0.3803 | Old 0.6264 | New 0.2573
+Epoch 28, Train ACC Unlabelled_v2: All 0.3143 | Old 0.5210 | New 0.2109
+Train Accuracies: All 0.3803 | Old 0.6264 | New 0.2573
+Train Epoch: 29 Avg Loss: 1.2414 | Seen Class Acc: 0.0000 
+Collating features...
+633 4496
+Epoch 29, Train ACC Unlabelled_v1: All 0.3830 | Old 0.6331 | New 0.2579
+Epoch 29, Train ACC Unlabelled_v2: All 0.3089 | Old 0.5243 | New 0.2012
+Train Accuracies: All 0.3830 | Old 0.6331 | New 0.2579
+Train Epoch: 30 Avg Loss: 1.2021 | Seen Class Acc: 0.0000 
+Collating features...
+629 4496
+Epoch 30, Train ACC Unlabelled_v1: All 0.3850 | Old 0.6384 | New 0.2583
+Epoch 30, Train ACC Unlabelled_v2: All 0.3158 | Old 0.5197 | New 0.2139
+Train Accuracies: All 0.3850 | Old 0.6384 | New 0.2583
+Train Epoch: 31 Avg Loss: 1.1957 | Seen Class Acc: 0.0000 
+Collating features...
+637 4496
+Epoch 31, Train ACC Unlabelled_v1: All 0.3903 | Old 0.6404 | New 0.2653
+Epoch 31, Train ACC Unlabelled_v2: All 0.3161 | Old 0.5157 | New 0.2162
+Train Accuracies: All 0.3903 | Old 0.6404 | New 0.2653
+Train Epoch: 32 Avg Loss: 1.1729 | Seen Class Acc: 0.0000 
+Collating features...
