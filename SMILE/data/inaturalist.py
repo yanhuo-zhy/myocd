@@ -111,14 +111,15 @@ def subsample_classes(dataset, include_classes=(0, 1, 8, 9)):
 
 def get_train_val_indices(train_dataset, val_split=0.2):
 
-    train_classes = np.unique(train_dataset.targets)
+    targets = np.array([x for (x, _) in train_dataset.index])
+    train_classes = np.unique(targets)
 
     # Get train/test indices
     train_idxs = []
     val_idxs = []
     for cls in train_classes:
 
-        cls_idxs = np.where(train_dataset.targets == cls)[0]
+        cls_idxs = np.where(targets == cls)[0]
 
         v_ = np.random.choice(cls_idxs, replace=False, size=((int(val_split * len(cls_idxs))),))
         t_ = [x for x in cls_idxs if x not in v_]
@@ -177,7 +178,7 @@ def get_inaturalist_datasets(train_transform,
 if __name__ == '__main__':
 
     x = get_inaturalist_datasets(None, None, subclassname='Animalia', split_train_val=False,
-                         train_classes=range(10), prop_train_labels=0.5)
+                         train_classes=range(39), prop_train_labels=0.5)
 
     print('Printing lens...')
     for k, v in x.items():
@@ -189,7 +190,11 @@ if __name__ == '__main__':
     print('Printing total instances in train...')
     print(len(set(x['train_labelled'].uq_idxs)) + len(set(x['train_unlabelled'].uq_idxs)))
 
-    print(f'Num Labelled Classes: {len(set(x["train_labelled"].targets))}')
-    print(f'Num Unabelled Classes: {len(set(x["train_unlabelled"].targets))}')
+    targets = np.array([x for (x, _) in x["train_labelled"].index])
+    train_classes = np.unique(targets)
+    print(f'Num Labelled Classes: {len(train_classes)}')
+    targets = np.array([x for (x, _) in x["train_unlabelled"].index])
+    train_classes = np.unique(targets)
+    print(f'Num Unabelled Classes: {len(train_classes)}')
     print(f'Len labelled set: {len(x["train_labelled"])}')
     print(f'Len unlabelled set: {len(x["train_unlabelled"])}')
