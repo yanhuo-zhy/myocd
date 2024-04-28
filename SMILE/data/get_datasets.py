@@ -45,7 +45,19 @@ get_dataset_funcs = {
     'pets': get_oxford_pets_datasets,
     'flowers': get_oxford_flowers_datasets,
     'food': get_food_101_datasets,
-    'Animalia': get_inaturalist_datasets
+    'Actinopterygii': get_inaturalist_datasets,
+    'Amphibia': get_inaturalist_datasets,
+    'Animalia': get_inaturalist_datasets,
+    'Arachnida': get_inaturalist_datasets,
+    'Aves': get_inaturalist_datasets,
+    'Chromista': get_inaturalist_datasets,
+    'Fungi': get_inaturalist_datasets,
+    'Insecta': get_inaturalist_datasets,
+    'Mammalia': get_inaturalist_datasets,
+    'Mollusca': get_inaturalist_datasets,
+    'Plantae': get_inaturalist_datasets,
+    'Protozoa': get_inaturalist_datasets,
+    'Reptilia': get_inaturalist_datasets,
 }
 
 
