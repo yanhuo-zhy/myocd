@@ -6,7 +6,7 @@
 #SBATCH -c 5
 #SBATCH --mem=20000
 #SBATCH --gres gpu:1
-#SBATCH -o /home/pszzz/hyzheng/ocd/temp/smile_Animalia_test.txt
+#SBATCH -o /home/pszzz/hyzheng/myocd/temp/smile_Animalia_test.txt
 
 module load gcc/gcc-10.2.0
 # module load nvidia/cuda-10.0 nvidia/cudnn-v7.6.5.32-forcuda10.0
@@ -17,6 +17,8 @@ CUDA_VISIBLE_DEVICES=0
 
 # Get unique log file,
 SAVE_DIR=./outputs/Animalia/
+
+mkdir -p ${SAVE_DIR}
 
 EXP_NUM=$(ls ${SAVE_DIR} | wc -l)
 EXP_NUM=$((${EXP_NUM}+1))
