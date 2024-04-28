@@ -484,6 +484,39 @@ def build_dataset(is_train, args):
     ####my
 
     ####my
+    elif args.data_set == 'Amphibia':
+        from copy import deepcopy
+        # test_transform = build_transform(False, args)
+        mean = (0.485, 0.456, 0.406)
+        std = (0.229, 0.224, 0.225)
+
+        transform = transforms.Compose([
+        transforms.Resize(int(224 / 0.875), interpolation=3),
+        transforms.RandomCrop(224),
+        transforms.RandomHorizontalFlip(p=0.5),
+        transforms.ColorJitter(),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=torch.tensor(mean), std=torch.tensor(std))
+        ])
+
+        test_transform = transforms.Compose([
+            transforms.Resize(int(224 / 0.875), interpolation=3),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=torch.tensor(mean), std=torch.tensor(std))
+        ])
+        # transform = ContrastiveLearningViewGenerator(base_transform=transform, n_views=2)
+
+        train_dataset, test_dataset, train_dataset_unlabelled = get_inaturalist_datasets(train_transform=transform, test_transform=test_transform, subclassname='Amphibia',
+                                   train_classes=range(58), prop_train_labels=0.5)
+
+        unlabelled_train_examples_test = deepcopy(train_dataset_unlabelled)
+        unlabelled_train_examples_test.transform = test_transform
+        nb_classes = 58
+        return train_dataset, test_dataset, unlabelled_train_examples_test, nb_classes
+    ####my
+
+    ####my
     elif args.data_set == 'Animalia':
         from copy import deepcopy
         # test_transform = build_transform(False, args)
@@ -513,6 +546,171 @@ def build_dataset(is_train, args):
         unlabelled_train_examples_test = deepcopy(train_dataset_unlabelled)
         unlabelled_train_examples_test.transform = test_transform
         nb_classes = 39
+        return train_dataset, test_dataset, unlabelled_train_examples_test, nb_classes
+    ####my
+
+    ####my
+    elif args.data_set == 'Arachnida':
+        from copy import deepcopy
+        # test_transform = build_transform(False, args)
+        mean = (0.485, 0.456, 0.406)
+        std = (0.229, 0.224, 0.225)
+
+        transform = transforms.Compose([
+        transforms.Resize(int(224 / 0.875), interpolation=3),
+        transforms.RandomCrop(224),
+        transforms.RandomHorizontalFlip(p=0.5),
+        transforms.ColorJitter(),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=torch.tensor(mean), std=torch.tensor(std))
+        ])
+
+        test_transform = transforms.Compose([
+            transforms.Resize(int(224 / 0.875), interpolation=3),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=torch.tensor(mean), std=torch.tensor(std))
+        ])
+        # transform = ContrastiveLearningViewGenerator(base_transform=transform, n_views=2)
+
+        train_dataset, test_dataset, train_dataset_unlabelled = get_inaturalist_datasets(train_transform=transform, test_transform=test_transform, subclassname='Arachnida',
+                                   train_classes=range(28), prop_train_labels=0.5)
+
+        unlabelled_train_examples_test = deepcopy(train_dataset_unlabelled)
+        unlabelled_train_examples_test.transform = test_transform
+        nb_classes = 28
+        return train_dataset, test_dataset, unlabelled_train_examples_test, nb_classes
+    ####my
+
+    ####my
+    elif args.data_set == 'Fungi':
+        from copy import deepcopy
+        # test_transform = build_transform(False, args)
+        mean = (0.485, 0.456, 0.406)
+        std = (0.229, 0.224, 0.225)
+
+        transform = transforms.Compose([
+        transforms.Resize(int(224 / 0.875), interpolation=3),
+        transforms.RandomCrop(224),
+        transforms.RandomHorizontalFlip(p=0.5),
+        transforms.ColorJitter(),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=torch.tensor(mean), std=torch.tensor(std))
+        ])
+
+        test_transform = transforms.Compose([
+            transforms.Resize(int(224 / 0.875), interpolation=3),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=torch.tensor(mean), std=torch.tensor(std))
+        ])
+        # transform = ContrastiveLearningViewGenerator(base_transform=transform, n_views=2)
+
+        train_dataset, test_dataset, train_dataset_unlabelled = get_inaturalist_datasets(train_transform=transform, test_transform=test_transform, subclassname='Fungi',
+                                   train_classes=range(61), prop_train_labels=0.5)
+
+        unlabelled_train_examples_test = deepcopy(train_dataset_unlabelled)
+        unlabelled_train_examples_test.transform = test_transform
+        nb_classes = 61
+        return train_dataset, test_dataset, unlabelled_train_examples_test, nb_classes
+    ####my
+
+    ####my
+    elif args.data_set == 'Mammalia':
+        from copy import deepcopy
+        # test_transform = build_transform(False, args)
+        mean = (0.485, 0.456, 0.406)
+        std = (0.229, 0.224, 0.225)
+
+        transform = transforms.Compose([
+        transforms.Resize(int(224 / 0.875), interpolation=3),
+        transforms.RandomCrop(224),
+        transforms.RandomHorizontalFlip(p=0.5),
+        transforms.ColorJitter(),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=torch.tensor(mean), std=torch.tensor(std))
+        ])
+
+        test_transform = transforms.Compose([
+            transforms.Resize(int(224 / 0.875), interpolation=3),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=torch.tensor(mean), std=torch.tensor(std))
+        ])
+        # transform = ContrastiveLearningViewGenerator(base_transform=transform, n_views=2)
+
+        train_dataset, test_dataset, train_dataset_unlabelled = get_inaturalist_datasets(train_transform=transform, test_transform=test_transform, subclassname='Mammalia',
+                                   train_classes=range(93), prop_train_labels=0.5)
+
+        unlabelled_train_examples_test = deepcopy(train_dataset_unlabelled)
+        unlabelled_train_examples_test.transform = test_transform
+        nb_classes = 93
+        return train_dataset, test_dataset, unlabelled_train_examples_test, nb_classes
+    ####my
+
+    ####my
+    elif args.data_set == 'Mollusca':
+        from copy import deepcopy
+        # test_transform = build_transform(False, args)
+        mean = (0.485, 0.456, 0.406)
+        std = (0.229, 0.224, 0.225)
+
+        transform = transforms.Compose([
+        transforms.Resize(int(224 / 0.875), interpolation=3),
+        transforms.RandomCrop(224),
+        transforms.RandomHorizontalFlip(p=0.5),
+        transforms.ColorJitter(),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=torch.tensor(mean), std=torch.tensor(std))
+        ])
+
+        test_transform = transforms.Compose([
+            transforms.Resize(int(224 / 0.875), interpolation=3),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=torch.tensor(mean), std=torch.tensor(std))
+        ])
+        # transform = ContrastiveLearningViewGenerator(base_transform=transform, n_views=2)
+
+        train_dataset, test_dataset, train_dataset_unlabelled = get_inaturalist_datasets(train_transform=transform, test_transform=test_transform, subclassname='Mollusca',
+                                   train_classes=range(47), prop_train_labels=0.5)
+
+        unlabelled_train_examples_test = deepcopy(train_dataset_unlabelled)
+        unlabelled_train_examples_test.transform = test_transform
+        nb_classes = 47
+        return train_dataset, test_dataset, unlabelled_train_examples_test, nb_classes
+    ####my
+
+    ####my
+    elif args.data_set == 'Reptilia':
+        from copy import deepcopy
+        # test_transform = build_transform(False, args)
+        mean = (0.485, 0.456, 0.406)
+        std = (0.229, 0.224, 0.225)
+
+        transform = transforms.Compose([
+        transforms.Resize(int(224 / 0.875), interpolation=3),
+        transforms.RandomCrop(224),
+        transforms.RandomHorizontalFlip(p=0.5),
+        transforms.ColorJitter(),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=torch.tensor(mean), std=torch.tensor(std))
+        ])
+
+        test_transform = transforms.Compose([
+            transforms.Resize(int(224 / 0.875), interpolation=3),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=torch.tensor(mean), std=torch.tensor(std))
+        ])
+        # transform = ContrastiveLearningViewGenerator(base_transform=transform, n_views=2)
+
+        train_dataset, test_dataset, train_dataset_unlabelled = get_inaturalist_datasets(train_transform=transform, test_transform=test_transform, subclassname='Reptilia',
+                                   train_classes=range(145), prop_train_labels=0.5)
+
+        unlabelled_train_examples_test = deepcopy(train_dataset_unlabelled)
+        unlabelled_train_examples_test.transform = test_transform
+        nb_classes = 145
         return train_dataset, test_dataset, unlabelled_train_examples_test, nb_classes
     ####my
 

@@ -228,10 +228,40 @@ def get_class_splits(args):
         args.train_classes = range(51)
         args.unlabeled_classes = range(51, 101)
 
+    elif args.dataset_name == 'Amphibia':
+        args.image_size = 224
+        args.train_classes = range(58)
+        args.unlabeled_classes = range(58, 115)
+
     elif args.dataset_name == 'Animalia':
         args.image_size = 224
         args.train_classes = range(39)
         args.unlabeled_classes = range(39, 77)
+
+    elif args.dataset_name == 'Arachnida':
+        args.image_size = 224
+        args.train_classes = range(28)
+        args.unlabeled_classes = range(28, 56)
+
+    elif args.dataset_name == 'Fungi':
+        args.image_size = 224
+        args.train_classes = range(61)
+        args.unlabeled_classes = range(61, 121)
+
+    elif args.dataset_name == 'Mammalia':
+        args.image_size = 224
+        args.train_classes = range(93)
+        args.unlabeled_classes = range(93, 186)
+
+    elif args.dataset_name == 'Mollusca':
+        args.image_size = 224
+        args.train_classes = range(47)
+        args.unlabeled_classes = range(47, 93)
+
+    elif args.dataset_name == 'Reptilia':
+        args.image_size = 224
+        args.train_classes = range(145)
+        args.unlabeled_classes = range(145, 289)
     ####add_new_dataset
 
     else:
