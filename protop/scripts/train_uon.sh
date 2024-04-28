@@ -1,12 +1,12 @@
 #!/bin/bash 
 #SBATCH --account cvl
-#SBATCH -p amp20
-#SBATCH --qos amp20
+#SBATCH -p general
+#SBATCH --qos normal
 #SBATCH -N 1
 #SBATCH -c 5
 #SBATCH --mem=20000
 #SBATCH --gres gpu:1
-#SBATCH -o /home/pszzz/hyzheng/myocd/temp/smile_protop_Reptilia_test0.txt
+#SBATCH -o /home/pszzz/hyzheng/myocd/temp/my_protop_Fungi_test0.txt
 
 module load gcc/gcc-10.2.0
 module load nvidia/cuda-11.1 nvidia/cudnn-v8.1.1.33-forcuda11.0-to-11.2
@@ -65,9 +65,9 @@ fi
 
 ft=protopformer
 
-for data_set in Reptilia;
+for data_set in Fungi;
 do
-    prototype_num=725
+    prototype_num=305
     data_path=datasets
     python main.py \
         --base_architecture=$model \
