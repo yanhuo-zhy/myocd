@@ -18,4 +18,4 @@ osr_split_dir = '/home/OCD/data/ssb_splits'
 # OTHER PATHS
 # -----------------
 dino_pretrain_path = '/wang_hp/zhy/gcd-task/pretrained/DINO/dino_vitbase16_pretrain.pth'
-exp_root = '/wang_hp/zhy/OCD/source_code'          # All logs and checkpoints will be saved here
+exp_root = '/home/pszzz/hyzheng/myocd/SMILE/'          # All logs and checkpoints will be saved here
