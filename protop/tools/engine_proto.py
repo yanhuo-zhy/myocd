@@ -863,7 +863,7 @@ def train_one_epoch(model: torch.nn.Module, criterion: _Loss,
             # loss_con = torch.nn.CrossEntropyLoss()(contrastive_logits, contrastive_labels)
             # alpha = calculate_alpha(epoch)
             
-            loss = loss_protop * 1.0 + loss_diff * 0.1 + loss_quan * 0.1 + loss_centers * 3.0 #+ loss_con*alpha#+ loss_quan2 * 0.2#+ loss_centers * 1.0 #+ loss_quan * 1.0#+ loss_quan2 * 1.0
+            loss = loss_protop * 1.0 #+ loss_diff * 0.1 + loss_quan * 0.1 + loss_centers * 3.0 #+ loss_con*alpha#+ loss_quan2 * 0.2#+ loss_centers * 1.0 #+ loss_quan * 1.0#+ loss_quan2 * 1.0
             # if epoch > 2:
             #     loss = loss_protop * 1.0 + loss_diff * 0.5 + loss_quan * 0.5 + loss_centers * 0.25 + loss_quan2 * 0.5
             #     loss = loss_protop * 1.0 + loss_centers * 0.1 + loss_diff * 0.1
@@ -977,9 +977,9 @@ def train_one_epoch(model: torch.nn.Module, criterion: _Loss,
     print("Averaged stats:", metric_logger)
     hamming_distance_statistics(hash_centers_positive)
 
-    evaluate(data_loader=data_loader_val, test_loader_unlabelled=test_loader_unlabelled, model=model, device=device, args=args, centers=hash_centers.cpu().sign())
+    test_status=evaluate(data_loader=data_loader_val, test_loader_unlabelled=test_loader_unlabelled, model=model, device=device, args=args, centers=hash_centers.cpu().sign())
 
-    return {k: meter.global_avg for k, meter in metric_logger.meters.items()}
+    return {k: meter.global_avg for k, meter in metric_logger.meters.items()}, test_status['acc1_protop']
 
 
 @torch.no_grad()
@@ -1140,7 +1140,7 @@ def evaluate(data_loader, test_loader_unlabelled, model, device, args, centers):
         ## openset
         all_feats.append(feats.cpu().numpy())
         targets = np.append(targets, label.cpu().numpy())
-        mask = np.append(mask, np.array([True if x.item() in range(58) else False for x in label]))
+        mask = np.append(mask, np.array([True if x.item() in range(61) else False for x in label]))
 
     # if total_pred_old > 0:
     #     correct_ratio = correct_pred_old / total_pred_old
