@@ -992,13 +992,9 @@ def construct_PPNet_dino(base_architecture, pretrained=True, img_size=224,
                     global_coe=0.5,
                     global_proto_per_class=10,
                     prototype_activation_function='log',
-                    add_on_layers_type='bottleneck',
-                    args=None):
+                    add_on_layers_type='bottleneck'):
     features = vit_base()
     # features.load_state_dict(torch.load('/wang_hp/zhy/gcd-task/pretrained/DINO/dino_vitbase16_pretrain.pth'))
-    # user_name = args.data_path.split('/')[2]
-    # checkpoint_path = f'/home/{user_name}/.cache/torch/hub/checkpoints/dino_vitbase16_pretrain.pth'
-    # features.load_state_dict(torch.load(checkpoint_path))
     features.load_state_dict(torch.load('/home/pszzz/.cache/torch/hub/checkpoints/dino_vitbase16_pretrain.pth'))
     # features = deit_base_patch_features(pretrained=pretrained)
     

@@ -977,9 +977,9 @@ def train_one_epoch(model: torch.nn.Module, criterion: _Loss,
     print("Averaged stats:", metric_logger)
     hamming_distance_statistics(hash_centers_positive)
 
-    test_status=evaluate(data_loader=data_loader_val, test_loader_unlabelled=test_loader_unlabelled, model=model, device=device, args=args, centers=hash_centers.cpu().sign())
+    evaluate(data_loader=data_loader_val, test_loader_unlabelled=test_loader_unlabelled, model=model, device=device, args=args, centers=hash_centers.cpu().sign())
 
-    return {k: meter.global_avg for k, meter in metric_logger.meters.items()}, test_status['acc1_protop']
+    return {k: meter.global_avg for k, meter in metric_logger.meters.items()}
 
 
 @torch.no_grad()

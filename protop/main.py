@@ -59,7 +59,7 @@ def get_args_parser():
     parser.add_argument('--ppc_cov_coe', type=float, default=0.1)
     parser.add_argument('--ppc_mean_coe', type=float, default=0.5)
 
-    parser.add_argument('--data_path', type=str, default='None')
+    parser.add_argument('--data_path', type=str, default='./datasets/cub200_cropped/')
 
     parser.add_argument('--features_lr', type=float, default=1e-4)
     parser.add_argument('--add_on_layers_lr', type=float, default=3e-3)
@@ -359,8 +359,7 @@ def main(args):
                                 global_coe=args.global_coe,
                                 global_proto_per_class=args.global_proto_per_class,
                                 prototype_activation_function=args.prototype_activation_function,
-                                add_on_layers_type=args.add_on_layers_type,
-                                args=args)
+                                add_on_layers_type=args.add_on_layers_type)
     ####my
     for name, param in model.named_parameters():
         if param.requires_grad:
@@ -447,7 +446,7 @@ def main(args):
             logger.info("distributed, data_loader_train set epoch")
             data_loader_train.sampler.set_epoch(epoch)
 
-        train_stats, acc1_protop = train_one_epoch(
+        train_stats = train_one_epoch(
             model=model, criterion=criterion, data_loader=data_loader_train, data_loader_val=data_loader_val, test_loader_unlabelled=test_loader_unlabelled,
             optimizer=optimizer, device=device, epoch=epoch, loss_scaler=loss_scaler,
             max_norm=args.clip_grad, model_ema=model_ema, mixup_fn=mixup_fn,
@@ -486,7 +485,7 @@ def main(args):
 
         # logger.info(f"Accuracy of the network on the {len(dataset_val)} test images: acc1_protop {test_stats['acc1_protop']:.1f}% acc1_backbone {test_stats['acc1_backbone']:.1f}%")
         # logger.info(f"Accuracy of the network on the {len(dataset_val)} test images: acc1_protop {test_stats['acc1_protop']:.1f}%")
-        # if max_accuracy < acc1_protop:   # save the best
+        # if max_accuracy < test_stats["acc1_protop"]:   # save the best
         #     checkpoint_paths = [output_dir / 'checkpoints/epoch-best.pth']
         #     for checkpoint_path in checkpoint_paths:
         #         utils.save_on_master({
@@ -498,7 +497,7 @@ def main(args):
         #             'scaler': loss_scaler.state_dict(),
         #             'args': args,
         #         }, checkpoint_path)
-        # max_accuracy = max(max_accuracy, acc1_protop)
+        # max_accuracy = max(max_accuracy, test_stats["acc1_protop"])
         # logger.info(f'Max accuracy: {max_accuracy:.2f}%')
 
         # log_stats = {**{f'train_{k}': v for k, v in train_stats.items()},
