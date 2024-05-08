@@ -1,12 +1,12 @@
 #!/bin/bash 
 #SBATCH --account cvl
-#SBATCH -p amp48
-#SBATCH --qos amp48
+#SBATCH -p amp20
+#SBATCH --qos amp20
 #SBATCH -N 1
 #SBATCH -c 5
 #SBATCH --mem=20000
 #SBATCH --gres gpu:1
-#SBATCH -o /home/psawl/hyzheng/myocd/temp/my_protop_ablation_cub_nofeatloss.txt
+#SBATCH -o /home/psawl/hyzheng/myocd/temp/my_protop_ablation_scar_nocenterloss(fixed_center).txt
 
 module load gcc/gcc-10.2.0
 module load nvidia/cuda-11.1 nvidia/cudnn-v8.1.1.33-forcuda11.0-to-11.2
@@ -64,8 +64,8 @@ then
 fi
 
 ft=protopformer
-data_set=CD_CUB2011U
-prototype_num=500
+data_set=CD_Car
+prototype_num=490
 data_path=/db/psawl/cub
 
 
@@ -74,7 +74,7 @@ python main.py \
     --data_set=$data_set \
     --data_path=$data_path \
     --input_size=$input_size \
-    --output_dir=$output_dir/$data_set/"ablation_nofeatloss_seed(1027)" \
+    --output_dir=$output_dir/$data_set/"ablation_nocenterloss(fixed_center)_seed(1027)" \
     --batch_size=$batch_size \
     --seed=1027 \
     --opt=$opt \
@@ -106,7 +106,7 @@ python main.py \
     --data_set=$data_set \
     --data_path=$data_path \
     --input_size=$input_size \
-    --output_dir=$output_dir/$data_set/"ablation_nofeatloss_seed(1028)" \
+    --output_dir=$output_dir/$data_set/"ablation_nocenterloss(fixed_center)_seed(1028)" \
     --batch_size=$batch_size \
     --seed=1028 \
     --opt=$opt \
@@ -138,7 +138,7 @@ python main.py \
     --data_set=$data_set \
     --data_path=$data_path \
     --input_size=$input_size \
-    --output_dir=$output_dir/$data_set/"ablation_nofeatloss_seed(1029)" \
+    --output_dir=$output_dir/$data_set/"ablation_nocenterloss(fixed_center)_seed(1029)" \
     --batch_size=$batch_size \
     --seed=1029 \
     --opt=$opt \
