@@ -1,7 +1,7 @@
 #!/bin/bash 
 #SBATCH --account cvl
-#SBATCH -p general
-#SBATCH --qos normal
+#SBATCH -p amp48
+#SBATCH --qos amp48
 #SBATCH -N 1
 #SBATCH -c 5
 #SBATCH --mem=20000
