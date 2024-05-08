@@ -150,7 +150,7 @@ def get_train_val_indices(train_dataset, val_split=0.2):
 
     return train_idxs, val_idxs
 
-def get_cub_datasets(train_transform, test_transform, train_classes=range(160), prop_train_labels=0.8, cub_root=None,
+def get_cub_datasets(train_transform, test_transform, train_classes=range(160), prop_train_labels=0.8,
                     split_train_val=False, seed=0, download=False):
 
     np.random.seed(seed)

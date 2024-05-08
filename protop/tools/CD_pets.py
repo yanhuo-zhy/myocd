@@ -118,7 +118,6 @@ def get_oxford_pets_datasets(train_transform,
                           test_transform,
                           train_classes=(0, 1, 8, 9),
                           prop_train_labels=0.8, 
-                          oxford_pet_root=None,
                           split_train_val=False, 
                           seed=0):
 
