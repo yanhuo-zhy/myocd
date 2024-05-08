@@ -359,7 +359,8 @@ def main(args):
                                 global_coe=args.global_coe,
                                 global_proto_per_class=args.global_proto_per_class,
                                 prototype_activation_function=args.prototype_activation_function,
-                                add_on_layers_type=args.add_on_layers_type)
+                                add_on_layers_type=args.add_on_layers_type,
+                                args=args)
     ####my
     for name, param in model.named_parameters():
         if param.requires_grad:
