@@ -68,7 +68,7 @@ ft=protopformer
 for data_set in CD_CUB2011U;
 do
     prototype_num=500
-    data_path="/db/pszzz/NCD_dataset/cub"
+    data_path=/db/pszzz/NCD_dataset/cub
     python main.py \
         --base_architecture=$model \
         --data_set=$data_set \
