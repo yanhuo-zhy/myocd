@@ -485,20 +485,20 @@ def main(args):
 
         # logger.info(f"Accuracy of the network on the {len(dataset_val)} test images: acc1_protop {test_stats['acc1_protop']:.1f}% acc1_backbone {test_stats['acc1_backbone']:.1f}%")
         # logger.info(f"Accuracy of the network on the {len(dataset_val)} test images: acc1_protop {test_stats['acc1_protop']:.1f}%")
-        if max_accuracy < acc1_protop:   # save the best
-            checkpoint_paths = [output_dir / 'checkpoints/epoch-best.pth']
-            for checkpoint_path in checkpoint_paths:
-                utils.save_on_master({
-                    'model': model_without_ddp.state_dict(),
-                    'optimizer': optimizer.state_dict(),
-                    'lr_scheduler': lr_scheduler.state_dict(),
-                    'epoch': epoch,
-                    'model_ema': get_state_dict(model_ema),
-                    'scaler': loss_scaler.state_dict(),
-                    'args': args,
-                }, checkpoint_path)
-        max_accuracy = max(max_accuracy, acc1_protop)
-        logger.info(f'Max accuracy: {max_accuracy:.2f}%')
+        # if max_accuracy < acc1_protop:   # save the best
+        #     checkpoint_paths = [output_dir / 'checkpoints/epoch-best.pth']
+        #     for checkpoint_path in checkpoint_paths:
+        #         utils.save_on_master({
+        #             'model': model_without_ddp.state_dict(),
+        #             'optimizer': optimizer.state_dict(),
+        #             'lr_scheduler': lr_scheduler.state_dict(),
+        #             'epoch': epoch,
+        #             'model_ema': get_state_dict(model_ema),
+        #             'scaler': loss_scaler.state_dict(),
+        #             'args': args,
+        #         }, checkpoint_path)
+        # max_accuracy = max(max_accuracy, acc1_protop)
+        # logger.info(f'Max accuracy: {max_accuracy:.2f}%')
 
         # log_stats = {**{f'train_{k}': v for k, v in train_stats.items()},
         #              **{f'test_{k}': v for k, v in test_stats.items()},
