@@ -301,7 +301,7 @@ def build_dataset(is_train, args):
         ])
         # transform = ContrastiveLearningViewGenerator(base_transform=transform, n_views=2)
 
-        split_path = '/wang_hp/zhy/ProtoPFormer/protop_for_hashcenter/ssb_splits/cub_osr_splits.pkl'
+        split_path = 'ssb_splits/cub_osr_splits.pkl'
         with open(split_path, 'rb') as handle:
             class_info = pickle.load(handle)
 
@@ -354,7 +354,7 @@ def build_dataset(is_train, args):
         ])
         # transform = ContrastiveLearningViewGenerator(base_transform=transform, n_views=2)
 
-        split_path = '/wang_hp/zhy/ProtoPFormer/protop_for_hashcenter/ssb_splits/aircraft_osr_splits.pkl'
+        split_path = 'ssb_splits/aircraft_osr_splits.pkl'
         with open(split_path, 'rb') as handle:
             class_info = pickle.load(handle)
 
@@ -770,7 +770,7 @@ def build_dataset(is_train, args):
         ])
         # transform = ContrastiveLearningViewGenerator(base_transform=transform, n_views=2)
 
-        split_path = '/wang_hp/zhy/ProtoPFormer/protop_for_hashcenter/ssb_splits/herbarium_19_class_splits.pkl'
+        split_path = 'ssb_splits/herbarium_19_class_splits.pkl'
         with open(split_path, 'rb') as handle:
             class_info = pickle.load(handle)
 
@@ -872,7 +872,7 @@ def build_dataset(is_train, args):
         ])
         # transform = ContrastiveLearningViewGenerator(base_transform=transform, n_views=2)
 
-        split_path = '/wang_hp/zhy/ProtoPFormer/protop_for_hashcenter/ssb_splits/scars_osr_splits.pkl'
+        split_path = 'ssb_splits/scars_osr_splits.pkl'
         with open(split_path, 'rb') as handle:
             class_info = pickle.load(handle)
 
