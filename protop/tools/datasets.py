@@ -309,7 +309,7 @@ def build_dataset(is_train, args):
         open_set_classes = class_info['unknown_classes']
         unlabeled_classes = open_set_classes['Hard'] + open_set_classes['Medium'] + open_set_classes['Easy']
 
-        train_dataset, test_dataset, train_dataset_unlabelled = get_cub_datasets(train_transform=transform, test_transform=test_transform, 
+        train_dataset, test_dataset, train_dataset_unlabelled = get_cub_datasets(train_transform=transform, test_transform=test_transform, cub_root=args.data_path,
                                    train_classes=train_classes, prop_train_labels=0.5)
         print("train_classes:", train_classes)
         print("len(train_classes):", len(train_classes))
@@ -408,7 +408,7 @@ def build_dataset(is_train, args):
         ])
         # transform = ContrastiveLearningViewGenerator(base_transform=transform, n_views=2)
 
-        train_dataset, test_dataset, train_dataset_unlabelled = get_food_101_datasets(train_transform=transform, test_transform=test_transform, 
+        train_dataset, test_dataset, train_dataset_unlabelled = get_food_101_datasets(train_transform=transform, test_transform=test_transform, food_101_root=args.data_path,
                                    train_classes=range(51), prop_train_labels=0.5)
 
         unlabelled_train_examples_test = deepcopy(train_dataset_unlabelled)
@@ -474,7 +474,7 @@ def build_dataset(is_train, args):
         ])
         # transform = ContrastiveLearningViewGenerator(base_transform=transform, n_views=2)
 
-        train_dataset, test_dataset, train_dataset_unlabelled = get_oxford_pets_datasets(train_transform=transform, test_transform=test_transform, 
+        train_dataset, test_dataset, train_dataset_unlabelled = get_oxford_pets_datasets(train_transform=transform, test_transform=test_transform, oxford_pet_root=args.data_path,
                                    train_classes=range(19), prop_train_labels=0.5)
 
         unlabelled_train_examples_test = deepcopy(train_dataset_unlabelled)
@@ -880,7 +880,7 @@ def build_dataset(is_train, args):
         open_set_classes = class_info['unknown_classes']
         unlabeled_classes = open_set_classes['Hard'] + open_set_classes['Medium'] + open_set_classes['Easy']
 
-        train_dataset, test_dataset, train_dataset_unlabelled = get_scars_datasets(train_transform=transform, test_transform=test_transform, 
+        train_dataset, test_dataset, train_dataset_unlabelled = get_scars_datasets(train_transform=transform, test_transform=test_transform, car_root=args.data_path,
                                    train_classes=train_classes, prop_train_labels=0.5)
         print("train_classes:", train_classes)
         print("len(train_classes):", len(train_classes))

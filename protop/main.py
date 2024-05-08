@@ -59,7 +59,7 @@ def get_args_parser():
     parser.add_argument('--ppc_cov_coe', type=float, default=0.1)
     parser.add_argument('--ppc_mean_coe', type=float, default=0.5)
 
-    parser.add_argument('--data_path', type=str, default='./datasets/cub200_cropped/')
+    parser.add_argument('--data_path', type=str, default='None')
 
     parser.add_argument('--features_lr', type=float, default=1e-4)
     parser.add_argument('--add_on_layers_lr', type=float, default=3e-3)
