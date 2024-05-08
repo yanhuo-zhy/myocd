@@ -864,7 +864,7 @@ def train_one_epoch(model: torch.nn.Module, criterion: _Loss,
             # alpha = calculate_alpha(epoch)
             
             # loss = loss_protop * 1.0 + loss_diff * 0.1 + loss_quan * 0.1 + loss_centers * 3.0 #+ loss_con*alpha#+ loss_quan2 * 0.2#+ loss_centers * 1.0 #+ loss_quan * 1.0#+ loss_quan2 * 1.0
-            loss = loss_diff * 0.1 + loss_quan * 0.1 + loss_centers * 3.0
+            loss = loss_protop * 1.0 + loss_diff * 0.1 + loss_quan * 0.1
             # if epoch > 2:
             #     loss = loss_protop * 1.0 + loss_diff * 0.5 + loss_quan * 0.5 + loss_centers * 0.25 + loss_quan2 * 0.5
             #     loss = loss_protop * 1.0 + loss_centers * 0.1 + loss_diff * 0.1
