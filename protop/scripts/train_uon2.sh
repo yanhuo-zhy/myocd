@@ -65,113 +65,104 @@ fi
 
 ft=protopformer
 
-for data_set in CD_CUB2011U;
-do
-    prototype_num=500
-    data_path='/db/psawl/cub'
-    python main.py \
-        --base_architecture=$model \
-        --data_set=$data_set \
-        --data_path=$data_path \
-        --input_size=$input_size \
-        --output_dir=$output_dir/$data_set/"ablation_nocenterloss_seed(1027)" \
-        --batch_size=$batch_size \
-        --seed=1027 \
-        --opt=$opt \
-        --sched=$sched \
-        --warmup-epochs=$warmup_epochs \
-        --warmup-lr=$warmup_lr \
-        --decay-epochs=$decay_epochs \
-        --decay-rate=$decay_rate \
-        --weight_decay=$weight_decay \
-        --epochs=$epochs \
-        --finetune=$ft \
-        --features_lr=$features_lr \
-        --add_on_layers_lr=$add_on_layers_lr \
-        --prototype_vectors_lr=$prototype_vectors_lr \
-        --prototype_shape $prototype_num $dim 1 1 \
-        --reserve_layers $reserve_layer_idx \
-        --reserve_token_nums $last_reserve_num \
-        --use_global=$use_global \
-        --use_ppc_loss=$use_ppc_loss \
-        --ppc_cov_thresh=$ppc_cov_thresh \
-        --ppc_mean_thresh=$ppc_mean_thresh \
-        --global_coe=$global_coe \
-        --global_proto_per_class=$global_proto_per_class \
-        --ppc_cov_coe=$ppc_cov_coe \
-        --ppc_mean_coe=$ppc_mean_coe
-done
+data_set=CD_CUB2011U
+prototype_num=500
+data_path='/db/psawl/cub'
 
-for data_set in CD_CUB2011U;
-do
-    prototype_num=500
-    data_path='/db/psawl/cub'
-    python main.py \
-        --base_architecture=$model \
-        --data_set=$data_set \
-        --data_path=$data_path \
-        --input_size=$input_size \
-        --output_dir=$output_dir/$data_set/"ablation_nocenterloss_seed(1028)" \
-        --batch_size=$batch_size \
-        --seed=1028 \
-        --opt=$opt \
-        --sched=$sched \
-        --warmup-epochs=$warmup_epochs \
-        --warmup-lr=$warmup_lr \
-        --decay-epochs=$decay_epochs \
-        --decay-rate=$decay_rate \
-        --weight_decay=$weight_decay \
-        --epochs=$epochs \
-        --finetune=$ft \
-        --features_lr=$features_lr \
-        --add_on_layers_lr=$add_on_layers_lr \
-        --prototype_vectors_lr=$prototype_vectors_lr \
-        --prototype_shape $prototype_num $dim 1 1 \
-        --reserve_layers $reserve_layer_idx \
-        --reserve_token_nums $last_reserve_num \
-        --use_global=$use_global \
-        --use_ppc_loss=$use_ppc_loss \
-        --ppc_cov_thresh=$ppc_cov_thresh \
-        --ppc_mean_thresh=$ppc_mean_thresh \
-        --global_coe=$global_coe \
-        --global_proto_per_class=$global_proto_per_class \
-        --ppc_cov_coe=$ppc_cov_coe \
-        --ppc_mean_coe=$ppc_mean_coe
-done
+python main.py \
+    --base_architecture=$model \
+    --data_set=$data_set \
+    --data_path=$data_path \
+    --input_size=$input_size \
+    --output_dir=$output_dir/$data_set/"ablation_nocenterloss_seed(1027)" \
+    --batch_size=$batch_size \
+    --seed=1027 \
+    --opt=$opt \
+    --sched=$sched \
+    --warmup-epochs=$warmup_epochs \
+    --warmup-lr=$warmup_lr \
+    --decay-epochs=$decay_epochs \
+    --decay-rate=$decay_rate \
+    --weight_decay=$weight_decay \
+    --epochs=$epochs \
+    --finetune=$ft \
+    --features_lr=$features_lr \
+    --add_on_layers_lr=$add_on_layers_lr \
+    --prototype_vectors_lr=$prototype_vectors_lr \
+    --prototype_shape $prototype_num $dim 1 1 \
+    --reserve_layers $reserve_layer_idx \
+    --reserve_token_nums $last_reserve_num \
+    --use_global=$use_global \
+    --use_ppc_loss=$use_ppc_loss \
+    --ppc_cov_thresh=$ppc_cov_thresh \
+    --ppc_mean_thresh=$ppc_mean_thresh \
+    --global_coe=$global_coe \
+    --global_proto_per_class=$global_proto_per_class \
+    --ppc_cov_coe=$ppc_cov_coe \
+    --ppc_mean_coe=$ppc_mean_coe
 
-for data_set in CD_CUB2011U;
-do
-    prototype_num=500
-    data_path='/db/psawl/cub'
-    python main.py \
-        --base_architecture=$model \
-        --data_set=$data_set \
-        --data_path=$data_path \
-        --input_size=$input_size \
-        --output_dir=$output_dir/$data_set/"ablation_nocenterloss_seed(1029)" \
-        --batch_size=$batch_size \
-        --seed=1029 \
-        --opt=$opt \
-        --sched=$sched \
-        --warmup-epochs=$warmup_epochs \
-        --warmup-lr=$warmup_lr \
-        --decay-epochs=$decay_epochs \
-        --decay-rate=$decay_rate \
-        --weight_decay=$weight_decay \
-        --epochs=$epochs \
-        --finetune=$ft \
-        --features_lr=$features_lr \
-        --add_on_layers_lr=$add_on_layers_lr \
-        --prototype_vectors_lr=$prototype_vectors_lr \
-        --prototype_shape $prototype_num $dim 1 1 \
-        --reserve_layers $reserve_layer_idx \
-        --reserve_token_nums $last_reserve_num \
-        --use_global=$use_global \
-        --use_ppc_loss=$use_ppc_loss \
-        --ppc_cov_thresh=$ppc_cov_thresh \
-        --ppc_mean_thresh=$ppc_mean_thresh \
-        --global_coe=$global_coe \
-        --global_proto_per_class=$global_proto_per_class \
-        --ppc_cov_coe=$ppc_cov_coe \
-        --ppc_mean_coe=$ppc_mean_coe
-done
+
+python main.py \
+    --base_architecture=$model \
+    --data_set=$data_set \
+    --data_path=$data_path \
+    --input_size=$input_size \
+    --output_dir=$output_dir/$data_set/"ablation_nocenterloss_seed(1028)" \
+    --batch_size=$batch_size \
+    --seed=1028 \
+    --opt=$opt \
+    --sched=$sched \
+    --warmup-epochs=$warmup_epochs \
+    --warmup-lr=$warmup_lr \
+    --decay-epochs=$decay_epochs \
+    --decay-rate=$decay_rate \
+    --weight_decay=$weight_decay \
+    --epochs=$epochs \
+    --finetune=$ft \
+    --features_lr=$features_lr \
+    --add_on_layers_lr=$add_on_layers_lr \
+    --prototype_vectors_lr=$prototype_vectors_lr \
+    --prototype_shape $prototype_num $dim 1 1 \
+    --reserve_layers $reserve_layer_idx \
+    --reserve_token_nums $last_reserve_num \
+    --use_global=$use_global \
+    --use_ppc_loss=$use_ppc_loss \
+    --ppc_cov_thresh=$ppc_cov_thresh \
+    --ppc_mean_thresh=$ppc_mean_thresh \
+    --global_coe=$global_coe \
+    --global_proto_per_class=$global_proto_per_class \
+    --ppc_cov_coe=$ppc_cov_coe \
+    --ppc_mean_coe=$ppc_mean_coe
+
+
+python main.py \
+    --base_architecture=$model \
+    --data_set=$data_set \
+    --data_path=$data_path \
+    --input_size=$input_size \
+    --output_dir=$output_dir/$data_set/"ablation_nocenterloss_seed(1029)" \
+    --batch_size=$batch_size \
+    --seed=1029 \
+    --opt=$opt \
+    --sched=$sched \
+    --warmup-epochs=$warmup_epochs \
+    --warmup-lr=$warmup_lr \
+    --decay-epochs=$decay_epochs \
+    --decay-rate=$decay_rate \
+    --weight_decay=$weight_decay \
+    --epochs=$epochs \
+    --finetune=$ft \
+    --features_lr=$features_lr \
+    --add_on_layers_lr=$add_on_layers_lr \
+    --prototype_vectors_lr=$prototype_vectors_lr \
+    --prototype_shape $prototype_num $dim 1 1 \
+    --reserve_layers $reserve_layer_idx \
+    --reserve_token_nums $last_reserve_num \
+    --use_global=$use_global \
+    --use_ppc_loss=$use_ppc_loss \
+    --ppc_cov_thresh=$ppc_cov_thresh \
+    --ppc_mean_thresh=$ppc_mean_thresh \
+    --global_coe=$global_coe \
+    --global_proto_per_class=$global_proto_per_class \
+    --ppc_cov_coe=$ppc_cov_coe \
+    --ppc_mean_coe=$ppc_mean_coe
