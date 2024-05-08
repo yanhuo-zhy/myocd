@@ -68,10 +68,11 @@ ft=protopformer
 for data_set in CD_CUB2011U;
 do
     prototype_num=500
+    data_path=datasets
     python main.py \
         --base_architecture=$model \
         --data_set=$data_set \
-        --data_path="/db/pszzz/NCD_dataset/cub" \
+        --data_path=$data_path \
         --input_size=$input_size \
         --output_dir=$output_dir/$data_set/"ablation_nocenterloss_seed($seed)" \
         --batch_size=$batch_size \
