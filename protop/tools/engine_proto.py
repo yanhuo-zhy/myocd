@@ -842,8 +842,8 @@ def train_one_epoch(model: torch.nn.Module, criterion: _Loss,
 
 
             ## hash loss
-            # hash_centers = torch.tensor(selected_combinations).float().cuda()
-            loss_centers = cos_eps_loss(hash_feat, targets, hash_centers) #+ (1 - torch.abs(hash_feat)).mean() * 0.1
+            hash_centers_fix = torch.tensor(selected_combinations).float().cuda()
+            loss_centers = cos_eps_loss(hash_feat, targets, hash_centers_fix) #+ (1 - torch.abs(hash_feat)).mean() * 0.1
             # loss_centers = center_loss(hash_feat,targets, hash_centers) #+ (1 - torch.abs(hash_feat)).mean() * 0.1
             # loss_centers = cos_eps_loss(u=hash_feat, y=targets, hash_center=torch.Tensor(np.array(selected_combinations)).cuda())
 
@@ -864,7 +864,7 @@ def train_one_epoch(model: torch.nn.Module, criterion: _Loss,
             # alpha = calculate_alpha(epoch)
             
             # loss = loss_protop * 1.0 + loss_diff * 0.1 + loss_quan * 0.1 + loss_centers * 3.0 #+ loss_con*alpha#+ loss_quan2 * 0.2#+ loss_centers * 1.0 #+ loss_quan * 1.0#+ loss_quan2 * 1.0
-            loss = loss_protop * 1.0 + loss_diff * 0.1 + loss_quan * 0.1
+            loss = loss_protop * 1.0 + loss_centers * 3.0
             # if epoch > 2:
             #     loss = loss_protop * 1.0 + loss_diff * 0.5 + loss_quan * 0.5 + loss_centers * 0.25 + loss_quan2 * 0.5
             #     loss = loss_protop * 1.0 + loss_centers * 0.1 + loss_diff * 0.1
