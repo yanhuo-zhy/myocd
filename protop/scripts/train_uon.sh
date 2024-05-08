@@ -6,7 +6,7 @@
 #SBATCH -c 5
 #SBATCH --mem=20000
 #SBATCH --gres gpu:1
-#SBATCH -o /home/pszzz/hyzheng/myocd/temp/my_protop_Mollusca_slc0.txt
+#SBATCH -o /home/pszzz/hyzheng/myocd/temp/my_protop_ablation_cub_nocenterloss.txt
 
 module load gcc/gcc-10.2.0
 module load nvidia/cuda-11.1 nvidia/cudnn-v8.1.1.33-forcuda11.0-to-11.2
@@ -65,16 +65,16 @@ fi
 
 ft=protopformer
 
-for data_set in Mollusca;
+for data_set in CD_CUB2011U;
 do
-    prototype_num=235
-    data_path=datasets
+    prototype_num=500
+    data_path="/db/pszzz/NCD_dataset/cub"
     python main.py \
         --base_architecture=$model \
         --data_set=$data_set \
         --data_path=$data_path \
         --input_size=$input_size \
-        --output_dir=$output_dir/$data_set/"comparison_slc_seed($seed)" \
+        --output_dir=$output_dir/$data_set/"ablation_nocenterloss_seed($seed)" \
         --batch_size=$batch_size \
         --seed=$seed \
         --opt=$opt \
