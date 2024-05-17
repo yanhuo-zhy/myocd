@@ -3,14 +3,14 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn.init import trunc_normal_
 
-from tools.deit_features import deit_tiny_patch_features, deit_small_patch_features, deit_base_patch_features
-from tools.cait_features import cait_xxs24_224_features
+# from tools.deit_features import deit_tiny_patch_features, deit_small_patch_features, deit_base_patch_features
+# from tools.cait_features import cait_xxs24_224_features
 from vision_transformer import vit_base
 
-base_architecture_to_features = {'deit_tiny_patch16_224': deit_tiny_patch_features,
-                                 'deit_small_patch16_224': deit_small_patch_features,
-                                 'deit_base_patch16_224': deit_base_patch_features,
-                                 'cait_xxs24_224': cait_xxs24_224_features,}
+# base_architecture_to_features = {'deit_tiny_patch16_224': deit_tiny_patch_features,
+#                                  'deit_small_patch16_224': deit_small_patch_features,
+#                                  'deit_base_patch16_224': deit_base_patch_features,
+#                                  'cait_xxs24_224': cait_xxs24_224_features,}
 
 class PPNet(nn.Module):
 
@@ -998,7 +998,8 @@ def construct_PPNet_dino(base_architecture, pretrained=True, img_size=224,
                     prototype_activation_function='log',
                     add_on_layers_type='bottleneck'):
     features = vit_base()
-    features.load_state_dict(torch.load('/wang_hp/zhy/gcd-task/pretrained/DINO/dino_vitbase16_pretrain.pth'))
+    # features.load_state_dict(torch.load('/wang_hp/zhy/gcd-task/pretrained/DINO/dino_vitbase16_pretrain.pth'))
+    features.load_state_dict(torch.load('/home/pszzz/.cache/torch/hub/checkpoints/dino_vitbase16_pretrain.pth'))
     # features = deit_base_patch_features(pretrained=pretrained)
     
     return PPNet_Normal(features=features,

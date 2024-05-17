@@ -76,7 +76,7 @@ python main.py \
     --input_size=$input_size \
     --output_dir=$output_dir/$data_set/"RankStat&WTA" \
     --batch_size=$batch_size \
-    --seed=1027 \
+    --seed=$seed \
     --opt=$opt \
     --sched=$sched \
     --warmup-epochs=$warmup_epochs \
