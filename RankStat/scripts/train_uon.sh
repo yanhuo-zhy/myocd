@@ -64,7 +64,7 @@ then
 fi
 
 ft=protopformer
-data_set=cub
+data_set=CD_CUB2011U
 prototype_num=500
 data_path=/db/pszzz/xxx
 
