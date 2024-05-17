@@ -7,7 +7,7 @@ from scipy import io as mat_io
 from torchvision.datasets.folder import default_loader
 from torch.utils.data import Dataset
 
-car_root = '/db/pszzz/stanford_cars'
+car_root = '/db/pszzz/NCD_dataset/stanford_cars'
 
 class CarsDataset(Dataset):
     """
