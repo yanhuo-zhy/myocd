@@ -6,7 +6,7 @@
 #SBATCH -c 5
 #SBATCH --mem=20000
 #SBATCH --gres gpu:1
-#SBATCH -o /home/pszzz/hyzheng/myocd/temp/RankStat_Mollusca.txt
+#SBATCH -o /home/pszzz/hyzheng/myocd/temp/RankStat_Fungi.txt
 
 module load gcc/gcc-10.2.0
 module load nvidia/cuda-11.1 nvidia/cudnn-v8.1.1.33-forcuda11.0-to-11.2
@@ -64,8 +64,8 @@ then
 fi
 
 ft=protopformer
-data_set=Mollusca
-prototype_num=235
+data_set=Fungi
+prototype_num=305
 data_path=/db/pszzz/xxx
 
 
