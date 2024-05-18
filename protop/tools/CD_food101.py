@@ -4,7 +4,7 @@ import numpy as np
 from typing import Any, Tuple
 from PIL import Image
 
-food_101_root = '/wang_hp/zhy/data/food-101'
+food_101_root = '/db/pszzz/NCD_dataset/food-101'
 
 class Food101_Base(Food101):
 

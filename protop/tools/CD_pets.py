@@ -4,7 +4,7 @@ import numpy as np
 from typing import Any, Tuple
 from PIL import Image
 
-oxford_pet_root = '/wang_hp/zhy/data'
+oxford_pet_root = '/db/pszzz/NCD_dataset'
 
 class OxfordPet_Base(OxfordIIITPet):
 
