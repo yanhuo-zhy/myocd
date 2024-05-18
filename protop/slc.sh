@@ -15,7 +15,7 @@ source /home/pszzz/miniconda3/bin/activate zhy
 
 CUDA_VISIBLE_DEVICES=0
 
-MODEL_PATH='output_cosine/Fungi/comparison_slc(1027)/checkpoints/epoch-best.pth'
+MODEL_PATH='output_cosine/Fungi/comparison_slc_seed(1027)/checkpoints/epoch-best.pth'
 DATASET_NAME='Fungi'
 
 python slc_results.py \
