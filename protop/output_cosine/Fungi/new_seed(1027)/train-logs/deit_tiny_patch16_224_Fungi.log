@@ -1,0 +1,99 @@
+2024-05-18 03:24:03,604 - main - INFO - Start running with args: 
+Namespace(batch_size=128, distillw=0.5, enable_smoothing=False, enable_mixup=False, w_dis_token=False, base_architecture='deit_base_patch16_224', img_size=224, prototype_shape=[610, 768, 1, 1], prototype_activation_function='log', add_on_layers_type='regular', baseline_path=None, reserve_layers=[11], reserve_token_nums=[196], use_global=True, use_ppc_loss=False, ppc_cov_thresh=1.0, ppc_mean_thresh=2.0, global_coe=0.5, global_proto_per_class=10, ppc_cov_coe=0.1, ppc_mean_coe=0.5, data_path='/db/pszzz/xxx', features_lr=0.0001, add_on_layers_lr=0.001, prototype_vectors_lr=0.001, joint_lr_step_size=5, coefs_crs_ent=1, coefs_clst=0.8, coefs_sep=-0.08, coefs_l1=0.0001, epochs=200, model='deit_tiny_patch16_224', input_size=224, save_ep_freq=400, drop=0.0, drop_path=0.1, model_ema=True, model_ema_decay=0.99996, model_ema_force_cpu=False, opt='adamw', opt_eps=1e-08, opt_betas=None, clip_grad=None, momentum=0.9, weight_decay=0.05, sched='cosine', lr=0.0005, lr_noise=None, lr_noise_pct=0.67, lr_noise_std=1.0, warmup_lr=0.0001, min_lr=1e-05, decay_epochs=10.0, warmup_epochs=5, cooldown_epochs=10, patience_epochs=10, decay_rate=0.1, color_jitter=0.4, aa='rand-m9-mstd0.5-inc1', smoothing=0.0, train_interpolation='bicubic', reprob=0.25, remode='pixel', recount=1, resplit=False, mixup=0.0, cutmix=1.0, cutmix_minmax=None, mixup_prob=1.0, mixup_switch_prob=0.5, mixup_mode='batch', finetune='protopformer', data_set='Fungi', inat_category='name', output_dir='output_cosine//Fungi/new_seed(1027)', device='cuda', seed=1027, resume='', start_epoch=0, eval=False, dist_eval=False, num_workers=10, pin_mem=True, world_size=1, dist_url='env://', distributed=False)
+2024-05-18 03:24:03,605 - main - INFO - Distributed: False
+2024-05-18 03:24:17,083 - main - INFO - Dataset num_classes: 61
+2024-05-18 03:24:17,084 - main - INFO - train 1786 test: 3573
+2024-05-18 03:24:17,084 - main - INFO - test_dataset_unlabelled: 5820
+2024-05-18 03:24:17,086 - main - INFO - Label smoothing is not enabled, smoothing rate: 0.0
+2024-05-18 03:24:17,086 - main - INFO - Mixup is not enabled
+2024-05-18 03:24:23,445 - main - INFO - number of params: 14914840
+2024-05-18 03:24:23,446 - main - INFO - Start training for 200 epochs
+2024-05-18 03:24:23,447 - train_one_epoch - INFO - Start train one epoch
+2024-05-18 03:24:30,831 - log_every - INFO - Epoch: [0]  [ 0/14]  eta: 0:01:43  lr: 0.000100  loss_protop: 4.4203 (4.4203)  loss_centers: 4.1470 (4.1470)  loss_diff: 0.0000 (0.0000)  loss_quan: 0.6089 (0.6089)  loss_quan2: 0.8379 (0.8379)  time: 7.3831  data: 6.9995  max mem: 2952
+2024-05-18 03:24:34,303 - log_every - INFO - Epoch: [0]  [13/14]  eta: 0:00:00  lr: 0.000100  loss_protop: 4.4179 (4.4325)  loss_centers: 3.7397 (3.8198)  loss_diff: 0.0042 (0.0082)  loss_quan: 0.4668 (0.4946)  loss_quan2: 0.7612 (0.7707)  time: 0.7753  data: 0.5326  max mem: 3118
+2024-05-18 03:24:34,553 - log_every - INFO - Epoch: [0] Total time: 0:00:11 (0.7933 s / it)
+2024-05-18 03:24:34,621 - hamming_distance_statistics - INFO - Hamming distance 0: 4
+2024-05-18 03:24:34,621 - hamming_distance_statistics - INFO - Hamming distance 1: 13
+2024-05-18 03:24:34,621 - hamming_distance_statistics - INFO - Hamming distance 2: 47
+2024-05-18 03:24:34,621 - hamming_distance_statistics - INFO - Hamming distance 3: 123
+2024-05-18 03:24:34,621 - hamming_distance_statistics - INFO - Hamming distance 4: 223
+2024-05-18 03:24:34,621 - hamming_distance_statistics - INFO - Hamming distance 5: 325
+2024-05-18 03:24:34,621 - hamming_distance_statistics - INFO - Hamming distance 6: 371
+2024-05-18 03:24:34,621 - hamming_distance_statistics - INFO - Hamming distance 7: 302
+2024-05-18 03:24:34,621 - hamming_distance_statistics - INFO - Hamming distance 8: 234
+2024-05-18 03:24:34,622 - hamming_distance_statistics - INFO - Hamming distance 9: 125
+2024-05-18 03:24:34,622 - hamming_distance_statistics - INFO - Hamming distance 10: 47
+2024-05-18 03:24:34,622 - hamming_distance_statistics - INFO - Hamming distance 11: 12
+2024-05-18 03:24:34,622 - hamming_distance_statistics - INFO - Hamming distance 12: 4
+2024-05-18 03:24:34,622 - evaluate - INFO - Start validation
+2024-05-18 03:24:44,229 - log_every - INFO - Test:  [ 0/19]  eta: 0:03:02  acc1_protop: 21.3542 (21.3542)  local_acc1: 21.3542 (21.3542)  time: 9.6048  data: 9.3004  max mem: 3118
+2024-05-18 03:24:49,636 - log_every - INFO - Test:  [10/19]  eta: 0:00:12  acc1_protop: 1.5625 (11.4110)  local_acc1: 1.5625 (11.4110)  time: 1.3646  data: 1.0813  max mem: 3118
+2024-05-18 03:24:51,771 - log_every - INFO - Test:  [18/19]  eta: 0:00:00  acc1_protop: 1.0417 (7.1369)  local_acc1: 1.0417 (7.1369)  time: 0.9024  data: 0.6261  max mem: 3118
+2024-05-18 03:24:52,048 - log_every - INFO - Test: Total time: 0:00:17 (0.9171 s / it)
+2024-05-18 03:24:52,164 - evaluate - INFO - len(list(set(preds))): 909 len(preds): 3573
+2024-05-18 03:24:52,164 - evaluate - INFO - hash Acc: 0.153
+2024-05-18 03:24:52,164 - evaluate - INFO - * Acc1_protop 7.137
+2024-05-18 03:25:20,777 - evaluate - INFO - test len(list(set(preds))): 1176 len(preds): 5820
+2024-05-18 03:25:20,777 - evaluate - INFO - test hash all_acc: 0.110 old_acc: 0.155 new_acc: 0.091
+2024-05-18 03:25:22,539 - evaluate - INFO - test len(list(set(preds1))): 403 len(preds): 5820
+2024-05-18 03:25:22,539 - evaluate - INFO - case 1 all_acc: 0.153 old_acc: 0.219 new_acc: 0.124
+2024-05-18 03:25:22,546 - evaluate - INFO - case 1 V1_all_acc: 0.172 V1_old_acc: 0.262 V1_new_acc: 0.132
+2024-05-18 03:25:23,486 - evaluate - INFO - test len(list(set(preds1))): 105 len(preds): 5820
+2024-05-18 03:25:23,487 - evaluate - INFO - case 2 all_acc: 0.156 old_acc: 0.214 new_acc: 0.130
+2024-05-18 03:25:23,491 - evaluate - INFO - case 2 V1_all_acc: 0.191 V1_old_acc: 0.292 V1_new_acc: 0.147
+2024-05-18 03:25:23,492 - main - INFO - Averaged stats:
+2024-05-18 03:25:23,492 - main - INFO - {'lr': 0.00010000000000000003, 'loss_protop': 4.432487760271345, 'loss_centers': 3.8198496273585727, 'loss_diff': 0.008228739324424948, 'loss_quan': 0.49462890625, 'loss_quan2': 0.7707170758928571}
+2024-05-18 03:25:23,493 - train_one_epoch - INFO - Start train one epoch
+2024-05-18 03:25:29,183 - log_every - INFO - Epoch: [1]  [ 0/14]  eta: 0:01:19  lr: 0.000100  loss_protop: 4.4049 (4.4049)  loss_centers: 3.4746 (3.4746)  loss_diff: 0.0259 (0.0259)  loss_quan: 0.3872 (0.3872)  loss_quan2: 0.6714 (0.6714)  time: 5.6894  data: 5.4189  max mem: 3337
+2024-05-18 03:25:32,400 - log_every - INFO - Epoch: [1]  [13/14]  eta: 0:00:00  lr: 0.000100  loss_protop: 4.4256 (4.4308)  loss_centers: 3.3932 (3.4011)  loss_diff: 0.0156 (0.0183)  loss_quan: 0.3457 (0.3521)  loss_quan2: 0.6294 (0.6353)  time: 0.6361  data: 0.3887  max mem: 3337
+2024-05-18 03:25:32,646 - log_every - INFO - Epoch: [1] Total time: 0:00:09 (0.6538 s / it)
+2024-05-18 03:25:32,727 - hamming_distance_statistics - INFO - Hamming distance 0: 2
+2024-05-18 03:25:32,727 - hamming_distance_statistics - INFO - Hamming distance 1: 14
+2024-05-18 03:25:32,727 - hamming_distance_statistics - INFO - Hamming distance 2: 54
+2024-05-18 03:25:32,727 - hamming_distance_statistics - INFO - Hamming distance 3: 106
+2024-05-18 03:25:32,727 - hamming_distance_statistics - INFO - Hamming distance 4: 213
+2024-05-18 03:25:32,727 - hamming_distance_statistics - INFO - Hamming distance 5: 296
+2024-05-18 03:25:32,727 - hamming_distance_statistics - INFO - Hamming distance 6: 388
+2024-05-18 03:25:32,727 - hamming_distance_statistics - INFO - Hamming distance 7: 344
+2024-05-18 03:25:32,727 - hamming_distance_statistics - INFO - Hamming distance 8: 237
+2024-05-18 03:25:32,727 - hamming_distance_statistics - INFO - Hamming distance 9: 121
+2024-05-18 03:25:32,727 - hamming_distance_statistics - INFO - Hamming distance 10: 48
+2024-05-18 03:25:32,727 - hamming_distance_statistics - INFO - Hamming distance 11: 7
+2024-05-18 03:25:32,727 - hamming_distance_statistics - INFO - Hamming distance 12: 0
+2024-05-18 03:25:32,727 - evaluate - INFO - Start validation
+2024-05-18 03:25:40,579 - log_every - INFO - Test:  [ 0/19]  eta: 0:02:29  acc1_protop: 39.0625 (39.0625)  local_acc1: 39.0625 (39.0625)  time: 7.8500  data: 7.5667  max mem: 3337
+2024-05-18 03:25:46,393 - log_every - INFO - Test:  [10/19]  eta: 0:00:11  acc1_protop: 2.6042 (20.7386)  local_acc1: 2.6042 (20.7386)  time: 1.2406  data: 0.9514  max mem: 3337
+2024-05-18 03:25:49,298 - log_every - INFO - Test:  [18/19]  eta: 0:00:00  acc1_protop: 1.0417 (12.8184)  local_acc1: 1.0417 (12.8184)  time: 0.8711  data: 0.5894  max mem: 3337
+2024-05-18 03:25:49,594 - log_every - INFO - Test: Total time: 0:00:16 (0.8877 s / it)
+2024-05-18 03:25:49,713 - evaluate - INFO - len(list(set(preds))): 828 len(preds): 3573
+2024-05-18 03:25:49,714 - evaluate - INFO - hash Acc: 0.177
+2024-05-18 03:25:49,714 - evaluate - INFO - * Acc1_protop 12.818
+2024-05-18 03:26:18,671 - evaluate - INFO - test len(list(set(preds))): 1184 len(preds): 5820
+2024-05-18 03:26:18,671 - evaluate - INFO - test hash all_acc: 0.122 old_acc: 0.153 new_acc: 0.108
+2024-05-18 03:26:20,491 - evaluate - INFO - test len(list(set(preds1))): 388 len(preds): 5820
+2024-05-18 03:26:20,491 - evaluate - INFO - case 1 all_acc: 0.163 old_acc: 0.208 new_acc: 0.144
+2024-05-18 03:26:20,498 - evaluate - INFO - case 1 V1_all_acc: 0.186 V1_old_acc: 0.253 V1_new_acc: 0.156
+2024-05-18 03:26:21,473 - evaluate - INFO - test len(list(set(preds1))): 108 len(preds): 5820
+2024-05-18 03:26:21,473 - evaluate - INFO - case 2 all_acc: 0.166 old_acc: 0.182 new_acc: 0.160
+2024-05-18 03:26:21,477 - evaluate - INFO - case 2 V1_all_acc: 0.211 V1_old_acc: 0.281 V1_new_acc: 0.180
+2024-05-18 03:26:21,479 - main - INFO - Averaged stats:
+2024-05-18 03:26:21,479 - main - INFO - {'lr': 0.00010000000000000003, 'loss_protop': 4.430782760892596, 'loss_centers': 3.4011439766202654, 'loss_diff': 0.018273381449814354, 'loss_quan': 0.35208565848214285, 'loss_quan2': 0.6353236607142857}
+2024-05-18 03:26:21,480 - train_one_epoch - INFO - Start train one epoch
+2024-05-18 03:26:27,835 - log_every - INFO - Epoch: [2]  [ 0/14]  eta: 0:01:28  lr: 0.000100  loss_protop: 4.3247 (4.3247)  loss_centers: 3.3267 (3.3267)  loss_diff: 0.0067 (0.0067)  loss_quan: 0.3276 (0.3276)  loss_quan2: 0.6064 (0.6064)  time: 6.3541  data: 6.1107  max mem: 3337
+2024-05-18 03:26:31,032 - log_every - INFO - Epoch: [2]  [13/14]  eta: 0:00:00  lr: 0.000100  loss_protop: 4.3754 (4.3874)  loss_centers: 3.2959 (3.2994)  loss_diff: 0.0117 (0.0165)  loss_quan: 0.3186 (0.3198)  loss_quan2: 0.5908 (0.5916)  time: 0.6821  data: 0.4366  max mem: 3337
+2024-05-18 03:26:31,334 - log_every - INFO - Epoch: [2] Total time: 0:00:09 (0.7039 s / it)
+2024-05-18 03:26:31,412 - hamming_distance_statistics - INFO - Hamming distance 0: 2
+2024-05-18 03:26:31,412 - hamming_distance_statistics - INFO - Hamming distance 1: 20
+2024-05-18 03:26:31,412 - hamming_distance_statistics - INFO - Hamming distance 2: 41
+2024-05-18 03:26:31,412 - hamming_distance_statistics - INFO - Hamming distance 3: 134
+2024-05-18 03:26:31,412 - hamming_distance_statistics - INFO - Hamming distance 4: 210
+2024-05-18 03:26:31,412 - hamming_distance_statistics - INFO - Hamming distance 5: 330
+2024-05-18 03:26:31,412 - hamming_distance_statistics - INFO - Hamming distance 6: 382
+2024-05-18 03:26:31,412 - hamming_distance_statistics - INFO - Hamming distance 7: 323
+2024-05-18 03:26:31,412 - hamming_distance_statistics - INFO - Hamming distance 8: 227
+2024-05-18 03:26:31,412 - hamming_distance_statistics - INFO - Hamming distance 9: 117
+2024-05-18 03:26:31,412 - hamming_distance_statistics - INFO - Hamming distance 10: 38
+2024-05-18 03:26:31,412 - hamming_distance_statistics - INFO - Hamming distance 11: 6
+2024-05-18 03:26:31,412 - hamming_distance_statistics - INFO - Hamming distance 12: 0
+2024-05-18 03:26:31,412 - evaluate - INFO - Start validation
+2024-05-18 03:26:38,635 - log_every - INFO - Test:  [ 0/19]  eta: 0:02:17  acc1_protop: 45.8333 (45.8333)  local_acc1: 45.8333 (45.8333)  time: 7.2206  data: 6.9104  max mem: 3337

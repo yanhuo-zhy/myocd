@@ -1,0 +1,47 @@
+2024-05-18 03:26:58,372 - main - INFO - Start running with args: 
+Namespace(batch_size=128, distillw=0.5, enable_smoothing=False, enable_mixup=False, w_dis_token=False, base_architecture='deit_base_patch16_224', img_size=224, prototype_shape=[390, 768, 1, 1], prototype_activation_function='log', add_on_layers_type='regular', baseline_path=None, reserve_layers=[11], reserve_token_nums=[196], use_global=True, use_ppc_loss=False, ppc_cov_thresh=1.0, ppc_mean_thresh=2.0, global_coe=0.5, global_proto_per_class=10, ppc_cov_coe=0.1, ppc_mean_coe=0.5, data_path='/db/pszzz/xxx', features_lr=0.0001, add_on_layers_lr=0.001, prototype_vectors_lr=0.001, joint_lr_step_size=5, coefs_crs_ent=1, coefs_clst=0.8, coefs_sep=-0.08, coefs_l1=0.0001, epochs=200, model='deit_tiny_patch16_224', input_size=224, save_ep_freq=400, drop=0.0, drop_path=0.1, model_ema=True, model_ema_decay=0.99996, model_ema_force_cpu=False, opt='adamw', opt_eps=1e-08, opt_betas=None, clip_grad=None, momentum=0.9, weight_decay=0.05, sched='cosine', lr=0.0005, lr_noise=None, lr_noise_pct=0.67, lr_noise_std=1.0, warmup_lr=0.0001, min_lr=1e-05, decay_epochs=10.0, warmup_epochs=5, cooldown_epochs=10, patience_epochs=10, decay_rate=0.1, color_jitter=0.4, aa='rand-m9-mstd0.5-inc1', smoothing=0.0, train_interpolation='bicubic', reprob=0.25, remode='pixel', recount=1, resplit=False, mixup=0.0, cutmix=1.0, cutmix_minmax=None, mixup_prob=1.0, mixup_switch_prob=0.5, mixup_mode='batch', finetune='protopformer', data_set='Animalia', inat_category='name', output_dir='output_cosine//Animalia/new_seed(1027)', device='cuda', seed=1027, resume='', start_epoch=0, eval=False, dist_eval=False, num_workers=10, pin_mem=True, world_size=1, dist_url='env://', distributed=False)
+2024-05-18 03:26:58,372 - main - INFO - Distributed: False
+2024-05-18 03:27:02,105 - main - INFO - Dataset num_classes: 39
+2024-05-18 03:27:02,105 - main - INFO - train 1492 test: 2985
+2024-05-18 03:27:02,105 - main - INFO - test_dataset_unlabelled: 5098
+2024-05-18 03:27:02,107 - main - INFO - Label smoothing is not enabled, smoothing rate: 0.0
+2024-05-18 03:27:02,107 - main - INFO - Mixup is not enabled
+2024-05-18 03:27:08,927 - main - INFO - number of params: 14576920
+2024-05-18 03:27:08,929 - main - INFO - Start training for 200 epochs
+2024-05-18 03:27:08,929 - train_one_epoch - INFO - Start train one epoch
+2024-05-18 03:27:16,606 - log_every - INFO - Epoch: [0]  [ 0/12]  eta: 0:01:32  lr: 0.000100  loss_protop: 4.1717 (4.1717)  loss_centers: 3.7303 (3.7303)  loss_diff: 0.0000 (0.0000)  loss_quan: 0.6040 (0.6040)  loss_quan2: 0.8247 (0.8247)  time: 7.6762  data: 7.2764  max mem: 2621
+2024-05-18 03:27:19,078 - log_every - INFO - Epoch: [0]  [11/12]  eta: 0:00:00  lr: 0.000100  loss_protop: 3.9959 (4.0306)  loss_centers: 3.1240 (3.2608)  loss_diff: 0.0362 (0.0317)  loss_quan: 0.4270 (0.4635)  loss_quan2: 0.7100 (0.7312)  time: 0.8455  data: 0.6064  max mem: 2787
+2024-05-18 03:27:19,335 - log_every - INFO - Epoch: [0] Total time: 0:00:10 (0.8672 s / it)
+2024-05-18 03:27:19,370 - hamming_distance_statistics - INFO - Hamming distance 0: 2
+2024-05-18 03:27:19,370 - hamming_distance_statistics - INFO - Hamming distance 1: 8
+2024-05-18 03:27:19,370 - hamming_distance_statistics - INFO - Hamming distance 2: 24
+2024-05-18 03:27:19,370 - hamming_distance_statistics - INFO - Hamming distance 3: 41
+2024-05-18 03:27:19,370 - hamming_distance_statistics - INFO - Hamming distance 4: 83
+2024-05-18 03:27:19,370 - hamming_distance_statistics - INFO - Hamming distance 5: 113
+2024-05-18 03:27:19,370 - hamming_distance_statistics - INFO - Hamming distance 6: 163
+2024-05-18 03:27:19,370 - hamming_distance_statistics - INFO - Hamming distance 7: 138
+2024-05-18 03:27:19,370 - hamming_distance_statistics - INFO - Hamming distance 8: 94
+2024-05-18 03:27:19,370 - hamming_distance_statistics - INFO - Hamming distance 9: 58
+2024-05-18 03:27:19,370 - hamming_distance_statistics - INFO - Hamming distance 10: 15
+2024-05-18 03:27:19,370 - hamming_distance_statistics - INFO - Hamming distance 11: 2
+2024-05-18 03:27:19,370 - hamming_distance_statistics - INFO - Hamming distance 12: 0
+2024-05-18 03:27:19,371 - evaluate - INFO - Start validation
+2024-05-18 03:27:29,127 - log_every - INFO - Test:  [ 0/16]  eta: 0:02:36  acc1_protop: 21.8750 (21.8750)  local_acc1: 21.8750 (21.8750)  time: 9.7548  data: 9.3881  max mem: 2787
+2024-05-18 03:27:32,951 - log_every - INFO - Test:  [10/16]  eta: 0:00:07  acc1_protop: 8.8542 (10.4640)  local_acc1: 8.8542 (10.4640)  time: 1.2344  data: 0.9394  max mem: 2787
+2024-05-18 03:27:34,219 - log_every - INFO - Test:  [15/16]  eta: 0:00:00  acc1_protop: 2.6042 (7.7052)  local_acc1: 2.6042 (7.7052)  time: 0.9278  data: 0.6459  max mem: 2787
+2024-05-18 03:27:34,490 - log_every - INFO - Test: Total time: 0:00:15 (0.9449 s / it)
+2024-05-18 03:27:34,570 - evaluate - INFO - len(list(set(preds))): 640 len(preds): 2985
+2024-05-18 03:27:34,570 - evaluate - INFO - hash Acc: 0.212
+2024-05-18 03:27:34,570 - evaluate - INFO - * Acc1_protop 7.705
+2024-05-18 03:28:00,026 - evaluate - INFO - test len(list(set(preds))): 1025 len(preds): 5098
+2024-05-18 03:28:00,027 - evaluate - INFO - test hash all_acc: 0.187 old_acc: 0.190 new_acc: 0.186
+2024-05-18 03:28:01,148 - evaluate - INFO - test len(list(set(preds1))): 362 len(preds): 5098
+2024-05-18 03:28:01,148 - evaluate - INFO - case 1 all_acc: 0.237 old_acc: 0.232 new_acc: 0.239
+2024-05-18 03:28:01,154 - evaluate - INFO - case 1 V1_all_acc: 0.267 V1_old_acc: 0.279 V1_new_acc: 0.262
+2024-05-18 03:28:01,786 - evaluate - INFO - test len(list(set(preds1))): 100 len(preds): 5098
+2024-05-18 03:28:01,786 - evaluate - INFO - case 2 all_acc: 0.241 old_acc: 0.226 new_acc: 0.247
+2024-05-18 03:28:01,789 - evaluate - INFO - case 2 V1_all_acc: 0.287 V1_old_acc: 0.320 V1_new_acc: 0.273
+2024-05-18 03:28:01,791 - main - INFO - Averaged stats:
+2024-05-18 03:28:01,791 - main - INFO - {'lr': 0.00010000000000000003, 'loss_protop': 4.030561983585358, 'loss_centers': 3.260771850744883, 'loss_diff': 0.03174245466167728, 'loss_quan': 0.4635213216145833, 'loss_quan2': 0.7312418619791666}
+2024-05-18 03:28:01,792 - train_one_epoch - INFO - Start train one epoch
+2024-05-18 03:28:07,847 - log_every - INFO - Epoch: [1]  [ 0/12]  eta: 0:01:12  lr: 0.000100  loss_protop: 4.1033 (4.1033)  loss_centers: 2.9299 (2.9299)  loss_diff: 0.0723 (0.0723)  loss_quan: 0.3638 (0.3638)  loss_quan2: 0.6182 (0.6182)  time: 6.0532  data: 5.7780  max mem: 3315
