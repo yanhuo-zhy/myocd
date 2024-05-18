@@ -26,7 +26,7 @@ class CustomCIFAR10(CIFAR10):
         img, label = super().__getitem__(item)
         uq_idx = self.uq_idxs[item]
 
-        return img, label, uq_idx
+        return img, label, uq_idx, uq_idx
 
     def __len__(self):
         return len(self.targets)
