@@ -8,7 +8,7 @@ from tools.CD_cub import get_cub_datasets
 from tools.CD_cars import get_scars_datasets
 from tools.CD_food101 import get_food_101_datasets
 from tools.CD_pets import get_oxford_pets_datasets
-# from tools.CD_inaturalist import get_inaturalist_datasets
+from tools.CD_inaturalist import get_inaturalist_datasets
 from tqdm import tqdm
 import numpy as np
 from scipy.optimize import linear_sum_assignment as linear_assignment
