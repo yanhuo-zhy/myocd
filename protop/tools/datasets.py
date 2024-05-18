@@ -834,7 +834,40 @@ def build_dataset(is_train, args):
         nb_classes = 50
         return train_dataset, test_dataset, unlabelled_train_examples_test, nb_classes
     ####my
+    ####my
+    elif args.data_set == 'CD_CIFAR10':
+        from copy import deepcopy
+        # test_transform = build_transform(False, args)
+        mean = (0.485, 0.456, 0.406)
+        std = (0.229, 0.224, 0.225)
+        transform = transforms.Compose([
+        transforms.Resize(int(224 / 0.875), interpolation=3),
+        transforms.RandomCrop(224),
+        # transforms.RandomResizedCrop(224, scale=(0.14, 1.), interpolation=Image.BICUBIC),
+        # flip_and_color_jitter,
+        transforms.RandomHorizontalFlip(p=0.5),
+        transforms.ColorJitter(),
+        # GaussianBlur(0.1),
+        # Solarization(0.2),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=torch.tensor(mean), std=torch.tensor(std))
+        ])
 
+        test_transform = transforms.Compose([
+            transforms.Resize(int(224 / 0.875), interpolation=3),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=torch.tensor(mean), std=torch.tensor(std))
+        ])
+
+        # transform = ContrastiveLearningViewGenerator(base_transform=transform, n_views=2)
+        train_dataset, test_dataset, train_dataset_unlabelled = get_cifar_10_datasets(train_transform=transform, test_transform=test_transform, 
+                                   train_classes=range(5), prop_train_labels=0.5)
+        unlabelled_train_examples_test = deepcopy(train_dataset_unlabelled)
+        unlabelled_train_examples_test.transform = test_transform
+        nb_classes = 5
+        return train_dataset, test_dataset, unlabelled_train_examples_test, nb_classes
+    ####my
     ####my
     elif args.data_set == 'CD_Car':
         from copy import deepcopy

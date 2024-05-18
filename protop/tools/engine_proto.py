@@ -1141,7 +1141,7 @@ def evaluate(data_loader, test_loader_unlabelled, model, device, args, centers):
         ## openset
         all_feats.append(feats.cpu().numpy())
         targets = np.append(targets, label.cpu().numpy())
-        mask = np.append(mask, np.array([True if x.item() in range(50) else False for x in label]))
+        mask = np.append(mask, np.array([True if x.item() in range(5) else False for x in label]))
 
     # if total_pred_old > 0:
     #     correct_ratio = correct_pred_old / total_pred_old
@@ -1251,6 +1251,39 @@ def evaluate(data_loader, test_loader_unlabelled, model, device, args, centers):
 
     all_acc, old_acc, new_acc = split_cluster_acc_v1(y_true=targets, y_pred=preds1, mask=mask)
     logger.info(f"case 2 V1_all_acc: {all_acc:.3f} V1_old_acc: {old_acc:.3f} V1_new_acc: {new_acc:.3f}")
+
+
+    hash_dict = centers.numpy().tolist()
+    preds1 = []  # 存储每个feat对应的类别索引
+    for feat in feats_hash:
+        found = False
+        # 首先检查是否已经存在相同的类别索引
+        if feat in hash_dict:
+            preds1.append(hash_dict.index(feat))  # 使用该类别的索引
+            found = True
+            
+        if not found:
+            # 如果没有找到相同的类别索引，再按距离判断
+            distances = [compute_hamming_distance_list(feat, center) for center in hash_dict]
+            min_distance = min(distances)
+            min_index = distances.index(min_distance)
+
+            if min_distance <= 3:
+                preds1.append(min_index)
+                found = True
+
+        if not found:
+            # 如果feat与所有已有类别的距离都大于1，则创建一个新的类别
+            hash_dict.append(feat)  # 直接添加整个feat，而不是仅top3_index
+            preds1.append(len(hash_dict) - 1)  # 使用新类别的索引
+    preds1 = np.array(preds1)
+
+    all_acc, old_acc, new_acc = split_cluster_acc_v2(y_true=targets, y_pred=preds1, mask=mask)
+    logger.info(f'test len(list(set(preds1))): {len(list(set(preds1)))} len(preds): {len(preds1)}')
+    logger.info(f"case 3 all_acc: {all_acc:.3f} old_acc: {old_acc:.3f} new_acc: {new_acc:.3f}")
+
+    all_acc, old_acc, new_acc = split_cluster_acc_v1(y_true=targets, y_pred=preds1, mask=mask)
+    logger.info(f"case 3 V1_all_acc: {all_acc:.3f} V1_old_acc: {old_acc:.3f} V1_new_acc: {new_acc:.3f}")
 
     # hash_dict = centers.numpy().tolist()
     # preds1 = []  # 存储每个feat对应的类别索引
