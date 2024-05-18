@@ -818,7 +818,7 @@ def train_one_epoch(model: torch.nn.Module, criterion: _Loss,
             # loss = loss_protop + loss_backbone + loss_rs * 0.25 + loss_con * 0.75
 
             ## hash center loss
-            samples_per_class = 5
+            samples_per_class = 10
             class_means = torch.stack([model.prototype_vectors_global[i:i+samples_per_class].mean(0) for i in range(0, model.prototype_vectors_global.size(0), samples_per_class)])
             hash_centers = model.hash_head(class_means)
             # print("hash_centers.shape", hash_centers.shape)
@@ -863,8 +863,8 @@ def train_one_epoch(model: torch.nn.Module, criterion: _Loss,
             # loss_con = torch.nn.CrossEntropyLoss()(contrastive_logits, contrastive_labels)
             # alpha = calculate_alpha(epoch)
             
-            # loss = loss_protop * 1.0 + loss_diff * 0.1 + loss_quan * 0.1 + loss_centers * 3.0 #+ loss_con*alpha#+ loss_quan2 * 0.2#+ loss_centers * 1.0 #+ loss_quan * 1.0#+ loss_quan2 * 1.0
-            loss = loss_protop * 1.0 + loss_diff * 0.1 + loss_quan * 0.1
+            loss = loss_protop * 1.0 + loss_diff * 0.1 + loss_quan * 0.1 + loss_centers * 3.0 #+ loss_con*alpha#+ loss_quan2 * 0.2#+ loss_centers * 1.0 #+ loss_quan * 1.0#+ loss_quan2 * 1.0
+            # loss = loss_protop * 1.0 + loss_diff * 0.1 + loss_quan * 0.1
             # if epoch > 2:
             #     loss = loss_protop * 1.0 + loss_diff * 0.5 + loss_quan * 0.5 + loss_centers * 0.25 + loss_quan2 * 0.5
             #     loss = loss_protop * 1.0 + loss_centers * 0.1 + loss_diff * 0.1
@@ -1141,7 +1141,7 @@ def evaluate(data_loader, test_loader_unlabelled, model, device, args, centers):
         ## openset
         all_feats.append(feats.cpu().numpy())
         targets = np.append(targets, label.cpu().numpy())
-        mask = np.append(mask, np.array([True if x.item() in range(98) else False for x in label]))
+        mask = np.append(mask, np.array([True if x.item() in range(100) else False for x in label]))
 
     # if total_pred_old > 0:
     #     correct_ratio = correct_pred_old / total_pred_old
@@ -1235,7 +1235,7 @@ def evaluate(data_loader, test_loader_unlabelled, model, device, args, centers):
             min_distance = min(distances)
             min_index = distances.index(min_distance)
 
-            if min_distance <= 1 and min_index >= len(centers.numpy()):
+            if min_distance <= 2:
                 preds1.append(min_index)
                 found = True
 

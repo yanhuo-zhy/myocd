@@ -12,6 +12,19 @@ from vision_transformer import vit_base
 #                                  'deit_base_patch16_224': deit_base_patch_features,
 #                                  'cait_xxs24_224': cait_xxs24_224_features,}
 
+class Dropout(nn.Module):
+    def __init__(self, p=0.5):
+        super(Dropout, self).__init__()
+        self.p = p
+        self.mask = None
+
+    def forward(self, X):
+        if self.training:  # Only apply dropout during training
+            self.mask = torch.bernoulli(torch.full_like(X, 1 - self.p))
+            return X * self.mask
+        else:
+            return X * (1 - self.p)
+        
 class PPNet(nn.Module):
 
     def __init__(self, features, img_size, prototype_shape,
@@ -628,6 +641,7 @@ class PPNet_Normal(nn.Module):
         #                                self.hash_layer2,
         #                                self.hash_layer2_norm)
         self.hash_head = HASHHead(in_dim=self.prototype_shape[1])
+        self.drop = Dropout(p=0.1)
         # self.mlp = MLP(in_dim=first_add_on_layer_in_channels)
 
         # self.hash_center_head = HASHHead(in_dim=self.prototype_shape[1])
@@ -826,7 +840,7 @@ class PPNet_Normal(nn.Module):
 
         global_activations, _ = self.get_activations(cls_tokens, self.prototype_vectors_global)
         # local_activations, _ = self.get_activations(img_tokens, self.prototype_vectors)
-
+        global_activations = self.drop(global_activations)
         logits_global = self.last_layer_global(global_activations)
         # feat = self.rankstat_head(global_activations)
         # print(cls_tokens.shape)

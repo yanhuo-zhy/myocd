@@ -6,7 +6,7 @@
 #SBATCH -c 5
 #SBATCH --mem=20000
 #SBATCH --gres gpu:1
-#SBATCH -o /home/pszzz/hyzheng/myocd/temp/my_protop_ablation_Fungi_nocenterloss(fixed_center).txt
+#SBATCH -o /home/pszzz/hyzheng/myocd/temp/my_protop_cub_newsota.txt
 
 module load gcc/gcc-10.2.0
 module load nvidia/cuda-11.1 nvidia/cudnn-v8.1.1.33-forcuda11.0-to-11.2
@@ -44,7 +44,7 @@ last_reserve_num=196
 global_coe=0.5
 ppc_cov_thresh=1.
 ppc_mean_thresh=2.
-global_proto_per_class=5
+global_proto_per_class=10
 ppc_cov_coe=0.1
 ppc_mean_coe=0.5
 dim=768
@@ -64,8 +64,8 @@ then
 fi
 
 ft=protopformer
-data_set=Fungi
-prototype_num=305
+data_set=CD_CUB2011U
+prototype_num=1000
 data_path=/db/pszzz/xxx
 
 
@@ -74,7 +74,7 @@ python main.py \
     --data_set=$data_set \
     --data_path=$data_path \
     --input_size=$input_size \
-    --output_dir=$output_dir/$data_set/"ablation_nocenterloss(fixed_center)_seed(1027)" \
+    --output_dir=$output_dir/$data_set/"new_seed(1027)" \
     --batch_size=$batch_size \
     --seed=1027 \
     --opt=$opt \
@@ -106,7 +106,7 @@ python main.py \
     --data_set=$data_set \
     --data_path=$data_path \
     --input_size=$input_size \
-    --output_dir=$output_dir/$data_set/"ablation_nocenterloss(fixed_center)_seed(1028)" \
+    --output_dir=$output_dir/$data_set/"newsota_seed(1028)" \
     --batch_size=$batch_size \
     --seed=1028 \
     --opt=$opt \
@@ -138,7 +138,7 @@ python main.py \
     --data_set=$data_set \
     --data_path=$data_path \
     --input_size=$input_size \
-    --output_dir=$output_dir/$data_set/"ablation_nocenterloss(fixed_center)_seed(1029)" \
+    --output_dir=$output_dir/$data_set/"newsota_seed(1029)" \
     --batch_size=$batch_size \
     --seed=1029 \
     --opt=$opt \
