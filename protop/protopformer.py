@@ -1009,8 +1009,8 @@ def construct_PPNet_dino(base_architecture, pretrained=True, img_size=224,
                     add_on_layers_type='bottleneck'):
     features = vit_base()
     # features.load_state_dict(torch.load('/wang_hp/zhy/gcd-task/pretrained/DINO/dino_vitbase16_pretrain.pth'))
-    # features.load_state_dict(torch.load('/home/pszzz/.cache/torch/hub/checkpoints/dino_vitbase16_pretrain.pth'))
-    features.load_state_dict(torch.load('/home/psawl/.cache/torch/hub/checkpoints/dino_vitbase16_pretrain.pth'))
+    features.load_state_dict(torch.load('/home/pszzz/.cache/torch/hub/checkpoints/dino_vitbase16_pretrain.pth'))
+    # features.load_state_dict(torch.load('/home/psawl/.cache/torch/hub/checkpoints/dino_vitbase16_pretrain.pth'))
     # features = deit_base_patch_features(pretrained=pretrained)
     
     return PPNet_Normal(features=features,
