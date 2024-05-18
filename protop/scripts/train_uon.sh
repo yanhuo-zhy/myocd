@@ -6,7 +6,7 @@
 #SBATCH -c 5
 #SBATCH --mem=20000
 #SBATCH --gres gpu:1
-#SBATCH -o /home/pszzz/hyzheng/myocd/temp/my_protop_Mollusca_newsota.txt
+#SBATCH -o /home/pszzz/hyzheng/myocd/temp/my_protop_cifar100_newsota.txt
 
 module load gcc/gcc-10.2.0
 module load nvidia/cuda-11.1 nvidia/cudnn-v8.1.1.33-forcuda11.0-to-11.2
@@ -64,8 +64,8 @@ then
 fi
 
 ft=protopformer
-data_set=Mollusca
-prototype_num=470
+data_set=CD_CIFAR100
+prototype_num=500
 data_path=/db/pszzz/xxx
 
 

@@ -9,8 +9,8 @@ from torch.utils.data import Dataset
 
 from torchvision.datasets import CIFAR10, CIFAR100
 
-cifar_10_root = '/wang_hp/zhy/data'
-cifar_100_root = '/wang_hp/zhy/data'
+cifar_10_root = '/db/pszzz/NCD_dataset/cifar10'
+cifar_100_root = '/db/pszzz/NCD_dataset/cifar100'
     
 ####my_cifar_dataset
 class CustomCIFAR10(CIFAR10):
