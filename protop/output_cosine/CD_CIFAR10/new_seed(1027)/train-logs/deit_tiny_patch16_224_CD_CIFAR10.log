@@ -8353,3 +8353,59 @@ Namespace(batch_size=128, distillw=0.5, enable_smoothing=False, enable_mixup=Fal
 2024-05-18 11:54:00,240 - evaluate - INFO - len(list(set(preds))): 13 len(preds): 5000
 2024-05-18 11:54:00,240 - evaluate - INFO - hash Acc: 0.985
 2024-05-18 11:54:00,240 - evaluate - INFO - * Acc1_protop 98.560
+2024-05-18 11:55:13,188 - evaluate - INFO - test len(list(set(preds))): 79 len(preds): 37500
+2024-05-18 11:55:13,189 - evaluate - INFO - test hash all_acc: 0.521 old_acc: 0.195 new_acc: 0.684
+2024-05-18 11:55:13,242 - evaluate - INFO - test len(list(set(preds1))): 37 len(preds): 37500
+2024-05-18 11:55:13,242 - evaluate - INFO - case 1 all_acc: 0.522 old_acc: 0.195 new_acc: 0.685
+2024-05-18 11:55:13,258 - evaluate - INFO - case 1 V1_all_acc: 0.837 V1_old_acc: 0.987 V1_new_acc: 0.763
+2024-05-18 11:55:13,310 - evaluate - INFO - test len(list(set(preds1))): 19 len(preds): 37500
+2024-05-18 11:55:13,310 - evaluate - INFO - case 2 all_acc: 0.523 old_acc: 0.195 new_acc: 0.686
+2024-05-18 11:55:13,325 - evaluate - INFO - case 2 V1_all_acc: 0.838 V1_old_acc: 0.987 V1_new_acc: 0.764
+2024-05-18 11:55:13,375 - evaluate - INFO - test len(list(set(preds1))): 9 len(preds): 37500
+2024-05-18 11:55:13,375 - evaluate - INFO - case 3 all_acc: 0.522 old_acc: 0.194 new_acc: 0.686
+2024-05-18 11:55:13,390 - evaluate - INFO - case 3 V1_all_acc: 0.839 V1_old_acc: 0.987 V1_new_acc: 0.765
+2024-05-18 11:55:13,398 - main - INFO - Averaged stats:
+2024-05-18 11:55:13,398 - main - INFO - {'lr': 1.0049955626711367e-05, 'loss_protop': 2.42387685956538e-06, 'loss_centers': 0.7635689043268865, 'loss_diff': 0.0, 'loss_quan': 0.0, 'loss_quan2': -1.5345583545918366}
+2024-05-18 11:55:13,399 - train_one_epoch - INFO - Start train one epoch
+2024-05-18 11:55:15,747 - log_every - INFO - Epoch: [199]  [ 0/98]  eta: 0:03:49  lr: 0.000010  loss_protop: 0.0000 (0.0000)  loss_centers: 0.7637 (0.7637)  loss_diff: 0.0000 (0.0000)  loss_quan: 0.0000 (0.0000)  loss_quan2: -1.5332 (-1.5332)  time: 2.3463  data: 2.1215  max mem: 3296
+2024-05-18 11:55:21,085 - log_every - INFO - Epoch: [199]  [30/98]  eta: 0:00:16  lr: 0.000010  loss_protop: 0.0000 (0.0000)  loss_centers: 0.7636 (0.7636)  loss_diff: 0.0000 (0.0000)  loss_quan: 0.0000 (0.0000)  loss_quan2: -1.5361 (-1.5314)  time: 0.1718  data: 0.0002  max mem: 3296
+2024-05-18 11:55:26,234 - log_every - INFO - Epoch: [199]  [60/98]  eta: 0:00:07  lr: 0.000010  loss_protop: 0.0000 (0.0000)  loss_centers: 0.7637 (0.7637)  loss_diff: 0.0000 (0.0000)  loss_quan: 0.0000 (0.0000)  loss_quan2: -1.5381 (-1.5300)  time: 0.1720  data: 0.0002  max mem: 3296
+2024-05-18 11:55:31,399 - log_every - INFO - Epoch: [199]  [90/98]  eta: 0:00:01  lr: 0.000010  loss_protop: 0.0000 (0.0000)  loss_centers: 0.7636 (0.7636)  loss_diff: 0.0000 (0.0000)  loss_quan: 0.0000 (0.0000)  loss_quan2: -1.5381 (-1.5301)  time: 0.1715  data: 0.0001  max mem: 3296
+2024-05-18 11:55:32,553 - log_every - INFO - Epoch: [199]  [97/98]  eta: 0:00:00  lr: 0.000010  loss_protop: 0.0000 (0.0000)  loss_centers: 0.7636 (0.7636)  loss_diff: 0.0000 (0.0000)  loss_quan: 0.0000 (0.0000)  loss_quan2: -1.5381 (-1.5304)  time: 0.1689  data: 0.0001  max mem: 3296
+2024-05-18 11:55:32,852 - log_every - INFO - Epoch: [199] Total time: 0:00:19 (0.1985 s / it)
+2024-05-18 11:55:32,853 - hamming_distance_statistics - INFO - Hamming distance 0: 0
+2024-05-18 11:55:32,853 - hamming_distance_statistics - INFO - Hamming distance 1: 0
+2024-05-18 11:55:32,853 - hamming_distance_statistics - INFO - Hamming distance 2: 0
+2024-05-18 11:55:32,853 - hamming_distance_statistics - INFO - Hamming distance 3: 0
+2024-05-18 11:55:32,853 - hamming_distance_statistics - INFO - Hamming distance 4: 0
+2024-05-18 11:55:32,853 - hamming_distance_statistics - INFO - Hamming distance 5: 0
+2024-05-18 11:55:32,853 - hamming_distance_statistics - INFO - Hamming distance 6: 2
+2024-05-18 11:55:32,853 - hamming_distance_statistics - INFO - Hamming distance 7: 4
+2024-05-18 11:55:32,853 - hamming_distance_statistics - INFO - Hamming distance 8: 4
+2024-05-18 11:55:32,853 - hamming_distance_statistics - INFO - Hamming distance 9: 0
+2024-05-18 11:55:32,853 - hamming_distance_statistics - INFO - Hamming distance 10: 0
+2024-05-18 11:55:32,853 - hamming_distance_statistics - INFO - Hamming distance 11: 0
+2024-05-18 11:55:32,853 - hamming_distance_statistics - INFO - Hamming distance 12: 0
+2024-05-18 11:55:32,854 - evaluate - INFO - Start validation
+2024-05-18 11:55:34,848 - log_every - INFO - Test:  [ 0/27]  eta: 0:00:53  acc1_protop: 99.4792 (99.4792)  local_acc1: 99.4792 (99.4792)  time: 1.9930  data: 1.7839  max mem: 3296
+2024-05-18 11:55:37,522 - log_every - INFO - Test:  [10/27]  eta: 0:00:07  acc1_protop: 98.9583 (98.5795)  local_acc1: 98.9583 (98.5795)  time: 0.4241  data: 0.2205  max mem: 3296
+2024-05-18 11:55:39,509 - log_every - INFO - Test:  [20/27]  eta: 0:00:02  acc1_protop: 98.9583 (98.5367)  local_acc1: 98.9583 (98.5367)  time: 0.2329  data: 0.0321  max mem: 3296
+2024-05-18 11:55:40,510 - log_every - INFO - Test:  [26/27]  eta: 0:00:00  acc1_protop: 98.9583 (98.6000)  local_acc1: 98.9583 (98.6000)  time: 0.1891  data: 0.0001  max mem: 3296
+2024-05-18 11:55:40,811 - log_every - INFO - Test: Total time: 0:00:07 (0.2947 s / it)
+2024-05-18 11:55:40,834 - evaluate - INFO - len(list(set(preds))): 14 len(preds): 5000
+2024-05-18 11:55:40,835 - evaluate - INFO - hash Acc: 0.985
+2024-05-18 11:55:40,835 - evaluate - INFO - * Acc1_protop 98.600
+2024-05-18 11:56:53,964 - evaluate - INFO - test len(list(set(preds))): 76 len(preds): 37500
+2024-05-18 11:56:53,964 - evaluate - INFO - test hash all_acc: 0.521 old_acc: 0.195 new_acc: 0.684
+2024-05-18 11:56:54,016 - evaluate - INFO - test len(list(set(preds1))): 35 len(preds): 37500
+2024-05-18 11:56:54,016 - evaluate - INFO - case 1 all_acc: 0.522 old_acc: 0.195 new_acc: 0.685
+2024-05-18 11:56:54,032 - evaluate - INFO - case 1 V1_all_acc: 0.838 V1_old_acc: 0.987 V1_new_acc: 0.763
+2024-05-18 11:56:54,084 - evaluate - INFO - test len(list(set(preds1))): 20 len(preds): 37500
+2024-05-18 11:56:54,084 - evaluate - INFO - case 2 all_acc: 0.523 old_acc: 0.195 new_acc: 0.686
+2024-05-18 11:56:54,099 - evaluate - INFO - case 2 V1_all_acc: 0.838 V1_old_acc: 0.987 V1_new_acc: 0.764
+2024-05-18 11:56:54,148 - evaluate - INFO - test len(list(set(preds1))): 9 len(preds): 37500
+2024-05-18 11:56:54,148 - evaluate - INFO - case 3 all_acc: 0.523 old_acc: 0.195 new_acc: 0.687
+2024-05-18 11:56:54,163 - evaluate - INFO - case 3 V1_all_acc: 0.839 V1_old_acc: 0.987 V1_new_acc: 0.766
+2024-05-18 11:56:54,170 - main - INFO - Averaged stats:
+2024-05-18 11:56:54,170 - main - INFO - {'lr': 1.0022204783542066e-05, 'loss_protop': 6.641333337731541e-06, 'loss_centers': 0.7636295739485293, 'loss_diff': 0.0, 'loss_quan': 0.0, 'loss_quan2': -1.5304328762755102}
+2024-05-18 11:56:54,171 - main - INFO - Training time 5:39:18
